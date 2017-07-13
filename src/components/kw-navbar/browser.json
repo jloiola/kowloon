@@ -1,0 +1,9 @@
+{
+  "dependencies": [
+    "less-import: spectre.css/src/variables.less",
+    "less-import: spectre.css/src/mixins.less",
+    "less-import: spectre.css/src/normalize.less",
+    "less-import: spectre.css/src/base.less",
+    "less: spectre.css/src/navbar.less"
+  ]
+}

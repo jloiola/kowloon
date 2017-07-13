@@ -1,0 +1,22 @@
+<div.panel>
+
+  <div.panel-header class=input.header.class if(input.header)>
+    <div.panel-title class=input.header.class if(input.header.title)>
+      <include(input.header.title)/>
+    </div>
+    <include(input.header.renderBody)/>
+  </div>
+
+  <div.panel-nav class=input.nav.class if(input.nav)>
+    <include(input.nav.renderBody)/>
+  </div>
+
+  <div.panel-body class=input.body.class if(input.body)>
+    <include(input.body.renderBody)/>
+  </div>
+
+  <div.panel-footer class=input.footer.class if(input.footer)>
+    <include(input.footer.renderBody)/>
+  </div>
+
+</div>

@@ -1,0 +1,12 @@
+{
+  "@src": "string",
+  "@initial": "string",
+  "@class": "string",
+  "@icon <icon>": {
+    "@src": "string"
+  },
+  "@size": {
+    "type": "string",
+    "enum": ["xs", "s", "lg", "xl"]
+  }
+}

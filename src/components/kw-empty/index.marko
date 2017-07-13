@@ -1,0 +1,18 @@
+<div.empty>
+  <div.empty-icon if(input.icon)>
+    <include(input.icon.renderBody)></include>
+  </div>
+
+  <!--  would like to expirement with adding class to include elements -->
+  <h4.empty-title if(input.title)>
+    <include(input.title.renderBody)></include>
+  </h4>
+
+  <p.empty-subtitle if(input.subtitle)>
+    <include(input.subtitle.renderBody)></include>
+  </p>
+
+  <div.empty-action if(input.action)>
+    <include(input.action.renderBody)></include>
+  </div>
+</div>

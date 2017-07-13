@@ -1,0 +1,24 @@
+# http://EditorConfig.org
+# for great justice; if you use vim/sublime/atom this helps normalize settings
+# many editors now support this natively for the common others ...
+
+# vim --> https://github.com/editorconfig/editorconfig-vim
+# sublime --> https://github.com/sindresorhus/editorconfig-sublime
+# atom --> https://github.com/sindresorhus/atom-editorconfig
+
+root = true
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = true
+
+[{Makefile,**.mk}]
+# Use tabs for indentation (Makefiles require tabs)
+indent_style = tab

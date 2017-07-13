@@ -1,0 +1,11 @@
+{
+  "@color": {
+    "type": "string",
+    "enum": ["primary", "success", "warning", "error"]
+  },
+  "@primary": "bool",
+  "@success": "bool",
+  "@warning": "bool",
+  "@error": "bool",
+  "@close": "bool"
+}

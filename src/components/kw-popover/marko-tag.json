@@ -1,0 +1,12 @@
+{
+  "@popover <popover>": {},
+  "@content <content>": {},
+  "@position": {
+    "type": "string",
+    "enum": ["top", "bottom", "left", "right"]
+  },
+  "@top": "bool",
+  "@bottom": "bool",
+  "@left": "bool",
+  "@right": "bool"
+}

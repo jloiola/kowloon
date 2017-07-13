@@ -1,0 +1,9 @@
+{
+  "@item-label": "string",
+  "@debounce": "int",
+  "@src": "expression",
+  "@items <item>[]": {
+    "@value": "expression",
+    "@class": "string"
+  }
+}

@@ -1,0 +1,15 @@
+
+<!-- both til i make a decision on the api ... -->
+$ var color = {
+  'toast-primary': input.primary,
+  'toast-success': input.success,
+  'toast-warning': input.warning,
+  'toast-error': input.error
+};
+<!--  i guess we let this one win-->
+$ if(input.color) {color['toast-' + input.color] = true};
+
+<div.toast class=color>
+  <include(input.renderBody) />
+  <button if(input.close) class="btn btn-clear float-right"></button>
+</div>

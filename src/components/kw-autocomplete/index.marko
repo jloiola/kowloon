@@ -1,0 +1,37 @@
+<div.form-autocomplete>
+  <div.form-autocomplete-input.form-input class={'has-icon-right': state.isLoading || state.showClear}>
+    <label.chip for(item in input.items)>
+      <img.avatar if(item.avatar) src=item.avatar.src  class=item.avatar.class alt=(item.alt || item.label) />
+      <!-- <include(item.renderBody)/> this no worky after focus; it just disappears ?? bug or dumb me-->
+      <span class=item.class no-update>
+        ${(input.itemLabel && item.value[input.itemLabel] ? item.value[input.itemLabel] : item.label)}
+      </span>
+      <button.btn.btn-clear></button>
+    </label>
+
+    <input.form-input no-update
+      key="acInput"
+      type="text"
+      placeholder=input.placeholder
+      on-keyup('onKeyup')
+      on-focus('onFocus')
+      on-blur('onBlur') />
+
+    <i.form-icon class={'loading':state.isLoading, 'icon-cross': state.showClear}></i>
+  </div>
+
+  <ul.menu class={hide: !state.showMenu}>
+    <li.menu-item for(option in state.options)>
+      <a href="#autocomplete">
+        <div.tile.tile-centered>
+          <div.tile-icon>
+            <img.avatar.avatar-sm src="img/avatar-4.png" alt="Steve Rogers" />
+          </div>
+          <div.tile-content>
+            <mark>S</mark>teve Roger<mark>s</mark>
+          </div>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>

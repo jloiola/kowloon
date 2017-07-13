@@ -1,0 +1,72 @@
+
+@navbar-height: 7rem;
+@pagebar-height: 5.2rem;
+
+blockquote {
+  background-color: #f9f9f9;
+}
+
+header.navbar {
+  height: @navbar-height;
+}
+
+.navbar {
+  width: 100%;
+  background-color: white;
+  &.fixed {
+    z-index: 200;
+  }
+  &.has-shadow {
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1)
+  }
+  // if we only have one child the first and last child are the same
+  // lets position start not end; may need to rethink this
+  .navbar-section:first-child {
+    justify-content: flex-start !important;
+  }
+}
+
+body {
+  &.has-fixed-navbar {
+    > .container {
+      padding-top: calc(@navbar-height ~"+" @layout-padding);
+    }
+  }
+  &.has-fixed-pagebar {
+    > .container {
+      padding-bottom: calc(@pagebar-height ~"+" @layout-padding);
+    }
+  }
+}
+
+.pagebar {
+  width: 100%;
+  bottom: 0;
+  height: @pagebar-height;
+  background-color: @body-bg;
+}
+
+footer {
+  padding: 2rem;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 3.4rem;
+}
+
+@media only screen and (max-width: @size-md) {
+  h1 {font-size: 2.8rem;}
+  h2 {font-size: 2.4rem;}
+  h3 {font-size: 2.0rem;}
+}
+
+// dont show empty p that come from OQs (our intent)
+p:empty {
+  display: none;
+}
+
+// look into fixed-sm, fixed-md, fixed-lg, fixed-*
