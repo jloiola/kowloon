@@ -1,0 +1,16 @@
+{
+  "@content <content>": {
+    "@title <title>": {
+      "@class": "string"
+    },
+    "@subtitle <subtitle>": {
+      "@class": "string"
+    }
+  },
+  "@action <action>": {
+    "@class": "string"
+  },
+  "@icon <icon>": {
+
+  }
+}

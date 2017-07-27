@@ -3,7 +3,7 @@ var axios = require('axios');
 
 module.exports = {
 
-  pendingKey: false,
+  pendingKeyPress: false,
 
   onCreate: function(input, out) {
     this.state = {
@@ -70,12 +70,12 @@ module.exports = {
     this.clearAndHide();
 
     var term = state.previousValue = this.getEl('acInput').value
-    if(this.pendingKey) {
-      clearTimeout(this.pendingKey)
+    if(this.pendingKeyPress) {
+      clearTimeout(this.pendingKeyPress)
     }
 
     state.isLoading = true
-    this.pendingKey = setTimeout(function(){
+    this.pendingKeyPress = setTimeout(function(){
       this.fetchData(term)
     }.bind(this), this.state.debounce);
 

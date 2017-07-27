@@ -8,6 +8,7 @@ var path = require('path');
 var express = require('express');
 var lasso = require('lasso');
 var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 
 var serveStatic = require('serve-static');
 var isProduction = process.env.NODE_ENV === 'production';
@@ -30,6 +31,7 @@ lasso.configure({
 });
 
 app.use(cookieParser());
+app.use(bodyParser.json());
 
 app.get('/diagnostic', function(req, res){
   return res.sendStatus(200);
@@ -37,9 +39,9 @@ app.get('/diagnostic', function(req, res){
 
 app.use('/static', serveStatic(__dirname + '/static'));
 
-app.use(function (err, req, res, next) {
-  var errorTemplate = require("./src/pages/error/template.marko");
-  res.marko(errorTemplate, {error: err});
+app.get("/", function (req, res, next) {
+  var template = require("./src/pages/home/template.marko");
+  res.marko(template, {});
 })
 
 // a bit ghetto

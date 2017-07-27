@@ -1,0 +1,27 @@
+<div.card>
+
+  <!--  hmm not sure how to do this right, feels wrong  -->
+  <div.card-image if(input.image)>
+    <img.img-responsive src=input.image.src />
+  </div>
+
+  <div.card-header class=input.header.class if(input.header)>
+    <div.card-title class=input.header.class if(input.header.title)>
+      <include(input.header.title)/>
+    </div>
+    <div.card-subtitle class=input.header.class if(input.header.subtitle)>
+      <include(input.header.subtitle)/>
+    </div>
+
+    <include(input.header.renderBody)/>
+  </div>
+
+  <div.card-body class=input.body.class if(input.body)>
+    <include(input.body.renderBody)/>
+  </div>
+
+  <div.card-footer class=input.footer.class if(input.footer)>
+    <include(input.footer.renderBody)/>
+  </div>
+
+</div>

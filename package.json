@@ -17,12 +17,13 @@
     "url": "https://github.com/jloiola/kowloon/issues"
   },
   "engines": {
-    "node": "8.1"
+    "node": "7.10"
   },
   "homepage": "https://github.com/jloiola/kowloon",
   "dependencies": {
     "axios": "^0.16.2",
     "bluebird": "^3.5.0",
+    "body-parser": "^1.17.2",
     "coffee-script": "^1.12.5",
     "compression": "^1.6.2",
     "cookie-parser": "^1.4.3",
@@ -37,7 +38,7 @@
     "page": "^1.7.1",
     "require-self-ref": "^2.0.1",
     "serve-static": "^1.12.3",
-    "spectre.css": "^0.2.14",
+    "spectre.css": "git+ssh://git@github.com/jloiola/spectre.git#brand",
     "yargs": "^8.0.2"
   },
   "devDependencies": {

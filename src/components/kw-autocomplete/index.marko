@@ -23,14 +23,10 @@
   <ul.menu class={hide: !state.showMenu}>
     <li.menu-item for(option in state.options)>
       <a href="#autocomplete">
-        <div.tile.tile-centered>
-          <div.tile-icon>
-            <img.avatar.avatar-sm src="img/avatar-4.png" alt="Steve Rogers" />
-          </div>
-          <div.tile-content>
-            <mark>S</mark>teve Roger<mark>s</mark>
-          </div>
-        </div>
+        <kw-tile>
+          <@icon><img.avatar.avatar-sm src="img/avatar-4.png" alt="Steve Rogers" /></@icon>
+          <@content><mark>S</mark>teve Roger<mark>s</mark></@content>
+        </kw-tile>
       </a>
     </li>
   </ul>

@@ -1,0 +1,17 @@
+<div.tile>
+  <div.tile-icon if(input.icon)>
+    <include(input.icon) />
+  </div>
+  <div.tile-content if(input.content)>
+    <p.tile-title if(input.content.title)>
+      <include(input.content.title) />
+    </p>
+    <p.tile-subtitle if(input.content.subtitle)>
+      <include(input.content.subtitle) />
+    </p>
+    <include(input.content.renderBody) />
+  </div>
+  <div.tile-action if(input.action)>
+    <include(input.action) />
+  </div>
+</div>

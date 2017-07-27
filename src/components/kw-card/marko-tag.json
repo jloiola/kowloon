@@ -1,0 +1,23 @@
+{
+  "@header <header>": {
+    "@title <title>": {
+        "@class": "string"
+      },
+    "@subtitle <subtitle>": {
+        "@class": "string"
+      },
+
+    "@class": "string"
+  },
+  "@body <body>": {
+    "@class": "string"
+  },
+  "@footer <footer>": {
+    "@class": "string"
+  },
+  "@image <image>": {
+    "@src": "string",
+    "@after": "bool",
+    "@before": "bool"
+  }
+}
