@@ -1,0 +1,44 @@
+
+class {
+  onCreate (input, out) {
+    console.log(arguments, "onCreate")
+    this.state = {
+      bindTo: input.bind
+    }
+  }
+
+  onInput (input) {
+    console.log(input, "in")
+  }
+
+  onMount () {
+    console.log(arguments, "mount")
+  }
+
+  onRender () {
+    console.log(arguments, "onRender")
+  }
+
+  onUpdate () {
+    console.log(arguments, "onUpdate")
+  }
+
+  handleOnSubmit(ev, el) {
+    console.log(ev, el, "submit form");
+  }
+
+  handleOnChange(ev, el) {
+    console.log(ev, el, "change form");
+  }
+
+  handleOnInput(ev, el) {
+    console.log(ev, el, "input form");
+  }
+
+
+
+}
+
+<form class={"form-horizontal": input.horizontal} on-submit("handleOnSubmit") on-change("handleOnChange")>
+  <include(input.renderBody) />
+</form>

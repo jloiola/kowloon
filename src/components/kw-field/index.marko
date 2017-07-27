@@ -1,0 +1,86 @@
+
+// TODO  input-sm and  input-lg
+
+class {
+  onCreate (input, out) {
+
+    this.state = {
+      options: [],
+      renderHorizontal: false
+    };
+  }
+
+  onInput (input) {
+
+    if(input.options) {
+      this.state.options = input.options;
+    }
+  }
+
+  onMount () {
+    this.state.renderHorizontal = this.el.parentElement.classList.contains("form-horizontal");
+  }
+
+  handleOnClick(ev, el) {
+    this.emit("onclick")
+  }
+
+  handleOnInput(ev, el) {
+    this.emit("oninput")
+  }
+
+  handleOnChange(ev, el) {
+    var value;
+    if(ev.target.tagName == "INPUT" && ev.target.type == "radio") {
+      var index = el.attributes.index.value;
+      value = this.state.options[index].value;
+    } else if (ev.target.tagName == "SELECT") {
+      value = this.state.options[el.selectedIndex].value;
+    } else if (ev.target.tagName == "TEXTAREA") {
+      console.log(el,":ta")
+      value = el.innerText;
+    }
+
+    this.emit("onchange", value, ev, el);
+  }
+}
+
+<div.form-group>
+
+  <if(input.label && ["checkbox", "switch"].indexOf(input.type) === -1)>
+    <label.form-label class=[(state.renderHorizontal && "col-3")]>${input.label}</label>
+  </if>
+  <else if(state.renderHorizontal)>
+    <div.col-3></div>
+  </else>
+
+
+  <div class=[(state.renderHorizontal && "col-9")]>
+
+    <if(input.type == "select")>
+      <select.form-select on-change("handleOnChange")>
+        <!-- <include(input.renderBody) /> -->
+        <option for(option in state.options) value=option.value>${option.label ? option.label : option.value}</option>
+      </select>
+    </if>
+    <else-if(input.type == "radio")>
+      <label.form-radio for(option in state.options | status-var=loop)>
+        <input index=loop.getIndex() type="radio" name=input.name value=option.value on-change("handleOnChange") />
+          <i.form-icon></i>${option.label}
+      </label>
+    </else-if>
+    <else-if(input.type == "checkbox" || input.type == "switch")>
+      <label class=["form-${input.type}"]>
+        <input type="checkbox" name=input.name value=input.value on-click("handleOnClick")>
+        <i.form-icon></i> ${input.label}
+      </label>
+    </else-if>
+    <else-if(input.type == "textarea")>
+      <textarea.form-input placeholder=input.placeholder on-change("handleOnChange")></textarea>
+    </else-if>
+    <else>
+      <input class="form-input" type=input.type placeholder=input.placeholder on-input("handleOnInput")>
+    </else>
+  </div>
+
+</div>

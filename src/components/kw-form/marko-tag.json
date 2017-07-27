@@ -1,0 +1,6 @@
+{
+  "@name": "string",
+  "@horizontal": "bool",
+  "@label-cols": "integer",
+  "@bind": "expression"
+}

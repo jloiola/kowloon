@@ -1,0 +1,13 @@
+{
+  "@type": "string",
+  "@label": "string",
+  "@name": "string",
+  "@placeholder": "string",
+  "@autogrow": "bool",
+  "@speech": "bool",
+  "@options <option>[]": {
+    "@value": "expression",
+    "@label": "string"
+  },
+  "@value": "expression"
+}
