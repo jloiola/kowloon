@@ -39,8 +39,8 @@ app.get('/diagnostic', function(req, res){
 
 app.use('/static', serveStatic(__dirname + '/static'));
 
-app.get("/", function (req, res, next) {
-  var template = require("./src/pages/home/template.marko");
+app.get("/demo", function (req, res, next) {
+  var template = require("./src/pages/demo/template.marko");
   res.marko(template, {});
 })
 

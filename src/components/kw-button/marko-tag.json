@@ -1,8 +1,13 @@
 {
-  "@color": {
+  "@size": {
     "type": "string",
-    "enum": ["primary", "success", "warning", "error"]
+    "enum": ["sm", "lg"]
   },
   "@primary": "bool",
-  "@link": "bool"
+  "@link": "bool",
+  "@action": "bool",
+  "@circle": "bool",
+  "@block": "bool",
+  "@disabled": "bool",
+  "@*": "string"
 }
