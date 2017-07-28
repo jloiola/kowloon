@@ -241,8 +241,8 @@
       <kw-slider value=85></kw-slider>
     </section>
 
-    <h3>Bars</h3>
-    <style>.chip{margin-right: 1em; }</style>
+    <h3>Chips</h3>
+    <style>.chip{margin: 0.5em; }</style>
     <section>
       <kw-chip>Crime</kw-chip>
       <kw-chip>Drama</kw-chip>
@@ -276,18 +276,18 @@
     </section>
 
     <h3>Toasts</h3>
-    <section>
+    <section.columns>
       <!-- hmmm -->
-      <kw-toast>
-        Defaut color
-      </kw-toast>
-      <kw-toast color="primary">
-        Via string attr
-      </kw-toast>
-      <kw-toast error>
-        Via flag/bool attr
-      </kw-toast>
 
+      <div.column.col-3>
+        <kw-toast>Defaut color</kw-toast>
+      </div>
+      <div.column.col-3>
+        <kw-toast color="primary">Via string attr</kw-toast>
+      </div>
+      <div.column.col-3>
+        <kw-toast error>Via flag/bool attr <kw-icon name="clear"></kw-icon></kw-toast>
+      </div>
     </section>
 
 

@@ -26,7 +26,7 @@ module.exports = {
 
   },
 
-  handleOnClick(index, ev, el) {
+  handleOnClick: function(index, ev, el) {
     ev.preventDefault();
     ev.target.blur();
     this.state.selectedIndex = index;

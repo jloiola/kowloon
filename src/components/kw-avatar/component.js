@@ -23,7 +23,7 @@ module.exports = {
   onDestroy: function() {
 
   },
-  handleOnLoad(ev, el) {
+  handleOnLoad: function(ev, el) {
     console.log(ev, el, "error")
     this.state.hideImage = true;
   }
