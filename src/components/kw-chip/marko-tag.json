@@ -1,0 +1,7 @@
+{
+  "@tooltip": "expression",
+  "@value": "expression",
+  "@label": "string",
+  "@class": "string",
+  "@*": "string"
+}

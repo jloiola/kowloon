@@ -1,0 +1,6 @@
+{
+  "@chips <kw-chip>[]": {
+    "@class": "string",
+    "@*": "string"
+  }
+}
