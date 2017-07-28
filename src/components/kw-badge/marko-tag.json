@@ -1,2 +1,5 @@
 {
+  "@badge": "string",
+  "@class": "string",
+  "@*": "string"
 }

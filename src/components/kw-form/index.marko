@@ -1,26 +1,21 @@
 
 class {
   onCreate (input, out) {
-    console.log(arguments, "onCreate")
     this.state = {
       bindTo: input.bind
     }
   }
 
   onInput (input) {
-    console.log(input, "in")
   }
 
   onMount () {
-    console.log(arguments, "mount")
   }
 
   onRender () {
-    console.log(arguments, "onRender")
   }
 
   onUpdate () {
-    console.log(arguments, "onUpdate")
   }
 
   handleOnSubmit(ev, el) {

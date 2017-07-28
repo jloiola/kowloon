@@ -3,6 +3,7 @@
     "type": "string",
     "enum": ["sm", "lg"]
   },
+  "@badge": "string",
   "@primary": "bool",
   "@link": "bool",
   "@action": "bool",

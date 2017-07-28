@@ -1,23 +1,16 @@
 
 
 // examples
-// not sure we can do this without some more reading ...
-// do we invert this? leave it as just a class ???
-
 // kind of an addon/mixin
-
-<span class="badge">
-  <include(input.renderBody)/>
+<span.badge class=input.class data-badge=input.badge>
+  <include(input.renderBody) />
 </span>
 
-<span class="badge" data-badge="8">
-  Notifications
-</span>
+// doesnt work yet .. think alt ideas
+<!-- <span if(!input.label)>
+  <include(input.renderBody) class=["badge", input.class] data-badge=input.content />
+</span> -->
 
-<button class="btn badge" data-badge="8">
-  Button
-</button>
-
-<figure class="avatar badge" data-badge="8" data-initial="YZ">
-  <img src="img/avatar-3.png" alt="YZ" />
-</figure>
+// could maybe do this to allow badge on the el?
+// prob easier just to use classes here .. noodle on it
+// <include(input.renderBody) class=input.class data-badge=input.content />

@@ -1,4 +1,4 @@
-<figure.avatar class=(input.size && 'avatar-' + input.size)>
-  <img src=input.src class=input.class />
+<figure.avatar class=[input.class, (input.size && 'avatar-' + input.size), (input.badge && 'badge')] data-badge=input.badge>
+  <img src=input.src />
   <!-- <img if(input.icon) src=input.src class=["avatar-icon", input.class] /> -->
 </figure>

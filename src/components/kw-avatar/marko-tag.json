@@ -1,6 +1,7 @@
 {
   "@src": "string",
   "@initial": "string",
+  "@badge": "string",
   "@class": "string",
   "@icon <icon>": {
     "@src": "string"

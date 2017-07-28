@@ -1,7 +1,6 @@
 
 module.exports = {
   onCreate: function(input, out) {
-
   },
 
   onInput: function(input) {

@@ -187,6 +187,7 @@
     </section>
 
     <h2>Components</h2>
+    <h3>Autocomplete</h3>
     <section>
   <!--  ponder markup vs atrribute for 'value || item'-->
     <!-- items=[{name:"dog"}, {name:"cat"}] -->
@@ -196,6 +197,7 @@
     </kw-autocomplete>
     </section>
 
+    <h3>Avatars</h3>
     <section>
       <kw-avatar src="https://picturepan2.github.io/spectre/img/avatar-1.png" size="xl">
         <@icon src="https://picturepan2.github.io/spectre/img/avatar-5.png" />
@@ -219,8 +221,20 @@
 
       <kw-avatar src="https://picturepan2.github.io/spectre/img/avatar-2.png" />
     </section>
+
+    <h3>Badges</h3>
+    <style>.badge{margin-right: 1em; }</style>
     <section>
-      <h3>Popovers</h3>
+      <kw-badge badge="8">Messages</kw-badge>
+      <kw-badge>Notifications</kw-badge>
+      <kw-avatar badge="8" initial="JL" src="https://picturepan2.github.io/spectre/img/avatar-2.png"></kw-avatar>
+      <kw-button badge="19">Messages</kw-button>
+
+    </section>
+
+
+    <h3>Popovers</h3>
+    <section>
       <kw-popover right>
         <a>I can be any element or even just text</a>
         <@popover>
@@ -240,8 +254,8 @@
       </kw-popover>
     </section>
 
+    <h3>Toasts</h3>
     <section>
-      <h3>Toasts</h3>
       <!-- hmmm -->
       <kw-toast>
         Defaut color
