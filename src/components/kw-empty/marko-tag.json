@@ -8,7 +8,9 @@
   "@subtitle <subtitle>": {
     "@class": "string"
   },
-  "@action <action>": {
+  "@actions <action>[]": {
     "@class": "string"
-  }
+  },
+  "@class": "string",
+  "@*": "string"
 }

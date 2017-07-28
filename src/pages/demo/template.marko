@@ -67,24 +67,26 @@
       </kw-navbar>
     </section>
     <h3>Panels</h3>
-    <section>
-      <div.column.col-6.col-s-6>
-        <kw-panel style="background-color:white;">
+    <!--  so we have to use class not tag name like kw-panel because this isn't shadow DOM -->
+    <style>.panel {height: 50vh;background-color:white;}</style>
+    <section.columns>
+      <div.column.col-6>
+        <kw-panel>
           <@header class="text-center">
-            <kw-avatar size="xl" src="https://img.elo7.com.br/product/zoom/388A13/sq-104-adesivo-hulk-kids.jpg"></kw-avatar>
+            <kw-avatar size="xl" src="http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/256/Avengers-Hulk-icon.png"></kw-avatar>
             <@title>The Hulk</@title>
             <@subtitle>Bruce Banner</@subtitle>
           </@header>
           <@nav>
             <kw-tabs block>
               <@tab>
-                <a href="#">Music</a>
+                <a href="#">About</a>
               </@tab>
               <@tab>
-                <a href="#">Playlists</a>
+                <a href="#">Projects</a>
               </@tab>
               <@tab>
-                <a href="#">Radio</a>
+                <a href="#">Comments</a>
               </@tab>
             </kw-tabs>
           </@nav>
@@ -101,22 +103,88 @@
                 <@title>Location</@title>
                 <@subtitle>Dayton, Ohio</@subtitle>
               </@content>
-              <@action><kw-button action link size="lg">E</kw-button></@action>
+              <@action>
+                <kw-button action link size="lg">E</kw-button>
+              </@action>
             </kw-tile>
 
           </@body>
           <@footer>
-
+            <kw-button block primary>Save</kw-button>
           </@footer>
-
-
         </kw-panel>
       </div>
-      <div.column.col-6.col-s-6>
-
+      <div.column.col-6>
+        <kw-panel>
+          <@header>
+            <@title>Comments</@title>
+          </@header>
+          <@body>
+            <kw-tile style="margin: 1.5rem 0;">
+              <@icon>
+                <kw-avatar src="http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/256/Avengers-Thor-icon.png"></kw-avatar>
+              </@icon>
+              <@content>
+                <@title>Thor Odinson</@title>
+                <@subtitle>Earth's Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle...</@subtitle>
+              </@content>
+            </kw-tile>
+            <kw-tile style="margin: 1.5rem 0;">
+              <@icon>
+                <kw-avatar src="http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/256/Avengers-Hulk-icon.png"></kw-avatar>
+              </@icon>
+              <@content>
+                <@title>Bruce Banner</@title>
+                <@subtitle>The Strategic Homeland Intervention, Enforcement, and Logistics Division...</@subtitle>
+              </@content>
+            </kw-tile>
+            <kw-tile style="margin: 1.5rem 0;">
+              <@icon>
+                <kw-avatar src="http://femoticons.net/images/stickers/superheroes/ironman_head.png"></kw-avatar>
+              </@icon>
+              <@content>
+                <@title>Tony Stark</@title>
+                <@subtitle>Earth's Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle...</@subtitle>
+              </@content>
+            </kw-tile>
+          </@body>
+          <@footer>
+            <kw-button block primary>Save</kw-button>
+          </@footer>
+        </kw-panel>
       </div>
     </section>
 
+    <h3>Empty States</h3>
+    <style>.empty{margin: 1.5em 0;}</style>
+    <section>
+      <kw-empty>
+        <@icon><kw-icon name="message" size="xl"></kw-icon></@icon>
+        <@title>You have no new messages</@title>
+        <@subtitle>Click the button to start a conversation</@subtitle>
+        <@action><kw-button primary>Send a message</kw-button></@action>
+      </kw-empty>
+      <kw-empty>
+        <@icon><kw-icon name="mail" size="xl"></kw-icon></@icon>
+        <@title>You've successfully signed up</@title>
+        <@subtitle>Click the button to invite your friends</@subtitle>
+        <@action><kw-button primary>Invite your friends</kw-button></@action>
+        <@action><kw-button link>Skip</kw-button></@action>
+      </kw-empty>
+      <kw-empty>
+        <@icon><kw-icon name="people" size="xl"></kw-icon></@icon>
+        <@title>You are not following anyone</@title>
+        <@subtitle>Start to meet new friends</@subtitle>
+        <@action>
+          <kw-field-group inline>
+            <kw-field type="text" />
+            <kw-button primary>Search</kw-button>
+          </kw-field-group>
+        </@action>
+      </kw-empty>
+
+
+    </section>
 
     <h2>Components</h2>
     <section>

@@ -1,4 +1,8 @@
 {
-  "@icon": "string",
-  "@class": "string"
+  "@name": "string",
+  "@class": "string",
+  "@size": {
+    "type": "string",
+    "enum": ["xs", "sm", "md", "lg", "xl"]
+  }
 }

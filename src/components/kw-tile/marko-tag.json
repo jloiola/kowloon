@@ -1,4 +1,8 @@
 {
+  "@icon <icon>": {
+    "@class": "string",
+    "@*": "string"
+  },
   "@content <content>": {
     "@title <title>": {
       "@class": "string"
@@ -9,9 +13,6 @@
   },
   "@action <action>": {
     "@class": "string"
-  },
-  "@icon <icon>": {
-
   },
   "@class": "string",
   "@*": "string"
