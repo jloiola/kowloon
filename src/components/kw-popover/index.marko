@@ -1,20 +1,7 @@
 
-<!-- both til i make a decision on the api ... -->
-$ var position = {
-  'popover-top': input.top,
-  'popover-bottom': input.bottom,
-  'popover-left': input.left,
-  'popover-right': input.right
-};
-<!--  i guess we let this one win-->
-$ if(input.position) {position['popover-' + input.position] = true};
-
-<div.popover class=position>
+<div.popover class=[input.class, (input.position && 'popover-' + input.position)]>
+  <!-- this is the trigger item; maybe be explicit? -->
   <include(input.renderBody) />
-  <!-- both til i make a decision on the 'api'  -->
-  <div.popover-container if(input.popover)>
-    <include(input.popover.renderBody) />
-  </div>
   <!-- both til i make a decision on the 'api'  -->
   <div.popover-container if(input.content)>
     <include(input.content) />

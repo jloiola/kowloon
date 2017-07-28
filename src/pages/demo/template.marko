@@ -199,7 +199,7 @@
 
     <h3>Avatars</h3>
     <section>
-      <kw-avatar src="https://picturepan2.github.io/spectre/img/avatar-1.png" size="xl">
+      <kw-avatar initial="JL" size="xl">
         <@icon src="https://picturepan2.github.io/spectre/img/avatar-5.png" />
       </kw-avatar>
 
@@ -211,7 +211,7 @@
         <@icon src="https://picturepan2.github.io/spectre/img/avatar-3.png" />
       </kw-avatar>
 
-      <kw-avatar src="https://picturepan2.github.io/spectre/img/avatar-3.png" size="s">
+      <kw-avatar src="https://picturepan2.github.io/spectre/img/avatar-3.png" size="s" >
         <@icon src="https://picturepan2.github.io/spectre/img/avatar-1.png" />
       </kw-avatar>
 
@@ -227,31 +227,37 @@
     <section>
       <kw-badge badge="8">Messages</kw-badge>
       <kw-badge>Notifications</kw-badge>
-      <kw-avatar badge="8" initial="JL" src="https://picturepan2.github.io/spectre/img/avatar-2.png"></kw-avatar>
+      <kw-avatar badge="8" initial="JL"></kw-avatar>
       <kw-button badge="19">Messages</kw-button>
 
+    </section>
+
+    <h3>Bars</h3>
+    <style>.bar{margin: 1em 0; }</style>
+    <section>
+      <kw-progress size="sm" value=58></kw-progress>
+      <kw-progress value=76 tooltip="Please wait while loading..."></kw-progress>
+
+      <kw-slider value=85></kw-slider>
     </section>
 
 
     <h3>Popovers</h3>
     <section>
-      <kw-popover right>
-        <a>I can be any element or even just text</a>
-        <@popover>
-          <div class="card">
-            <div class="card-header">
-              <div class="card-title">Apple</div>
-              <div class="card-subtitle">Software and hardware</div>
-            </div>
-            <div class="card-body">
-              To make a overpriced 'luxury' things.
-            </div>
-            <div class="card-footer">
-              <button class="btn btn-primary">Buy</button>
-            </div>
-          </div>
-        </@popover>
-      </kw-popover>
+      Many companies, like <kw-popover position="right"> <a>apple</a>
+        <@content>
+          <kw-card>
+            <@header>
+              <@title>Apple</@title>
+              <@subtitle>Software and Hardware</@subtitle>
+            </@header>
+            <@body>To make a overpriced 'luxury' things.</@body>
+            <@footer>
+              <kw-button primary>Buy</kw-button>
+            </@footer>
+          </kw-card>
+        </@content>
+      </kw-popover> sell things at exorbitant prices.
     </section>
 
     <h3>Toasts</h3>

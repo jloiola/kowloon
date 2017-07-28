@@ -1,0 +1,6 @@
+{
+  "@value": "number",
+  "@tooltip": "expression",
+  "@class": "string",
+  "@*": "string"
+}

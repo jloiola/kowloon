@@ -1,0 +1,10 @@
+{
+  "@value": "number",
+  "@size": {
+    "type": "string",
+    "enum": ["sm"]
+  },
+  "@tooltip": "expression",
+  "@class": "string",
+  "@*": "string"
+}

@@ -1,4 +1,8 @@
-<figure.avatar class=[input.class, (input.size && 'avatar-' + input.size), (input.badge && 'badge')] data-badge=input.badge>
-  <img src=input.src />
+<figure.avatar class=[input.class, (input.size && 'avatar-' + input.size), (input.badge && 'badge')] data-badge=input.badge
+  data-initial=input.initial>
+  <if(input.src)>
+    <!--  handle load errors by hiding image or using a default? -->
+    <img src=input.src alt=input.initial />
+  </if>
   <!-- <img if(input.icon) src=input.src class=["avatar-icon", input.class] /> -->
 </figure>
