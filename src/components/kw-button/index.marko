@@ -28,6 +28,6 @@ class {
   <include(input.renderBody) />
 </a>
 <!-- if there's _not_ an href make a button  -->
-<button.btn if(!input.link) class=[state.classMap, (input.size && "btn-" + input.size)] ${input.attrs}>
+<button.btn if(!input.href) class=[state.classMap, (input.size && "btn-" + input.size)] ${input.attrs}>
   <include(input.renderBody) />
 </button>

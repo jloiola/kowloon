@@ -1,15 +1,18 @@
-<div.panel>
+<div.panel ${input["*"]}>
 
   <div.panel-header class=input.header.class if(input.header)>
+    <include(input.header.renderBody)/>
     <div.panel-title class=input.header.class if(input.header.title)>
       <include(input.header.title)/>
     </div>
-    <include(input.header.renderBody)/>
+    <div.panel-subtitle class=input.header.class if(input.header.subtitle)>
+      <include(input.header.subtitle)/>
+    </div>
   </div>
 
-  <div.panel-nav class=input.nav.class if(input.nav)>
+  <nav.panel-nav class=input.nav.class if(input.nav)>
     <include(input.nav.renderBody)/>
-  </div>
+  </nav>
 
   <div.panel-body class=input.body.class if(input.body)>
     <include(input.body.renderBody)/>

@@ -47,6 +47,77 @@
 
     </section>
 
+
+    <h2>Layout</h2>
+    <h3>Navbar</h3>
+    <section>
+      <kw-navbar>
+        <@section>
+          <kw-button href="#" link>Docs</kw-button>
+          <kw-button href="#" link>Examples</kw-button>
+        </@section>
+        <@section center>
+          <kw-button action circle primary>W</kw-button>
+        </@section>
+        <@section>
+          <kw-button href="#" link>Twitter</kw-button>
+          <kw-button href="#" link>Github</kw-button>
+        </@section>
+
+      </kw-navbar>
+    </section>
+    <h3>Panels</h3>
+    <section>
+      <div.column.col-6.col-s-6>
+        <kw-panel style="background-color:white;">
+          <@header class="text-center">
+            <kw-avatar size="xl" src="https://img.elo7.com.br/product/zoom/388A13/sq-104-adesivo-hulk-kids.jpg"></kw-avatar>
+            <@title>The Hulk</@title>
+            <@subtitle>Bruce Banner</@subtitle>
+          </@header>
+          <@nav>
+            <kw-tabs block>
+              <@tab>
+                <a href="#">Music</a>
+              </@tab>
+              <@tab>
+                <a href="#">Playlists</a>
+              </@tab>
+              <@tab>
+                <a href="#">Radio</a>
+              </@tab>
+            </kw-tabs>
+          </@nav>
+          <@body>
+            <kw-tile.tile-centered style="margin: 1.5rem 0;">
+              <@content>
+                <@title>Email</@title>
+                <@subtitle>bruce.banner@hulk.com</@subtitle>
+              </@content>
+              <@action><kw-button action link size="lg">E</kw-button></@action>
+            </kw-tile>
+            <kw-tile.tile-centered style="margin: 1.5rem 0;">
+              <@content>
+                <@title>Location</@title>
+                <@subtitle>Dayton, Ohio</@subtitle>
+              </@content>
+              <@action><kw-button action link size="lg">E</kw-button></@action>
+            </kw-tile>
+
+          </@body>
+          <@footer>
+
+          </@footer>
+
+
+        </kw-panel>
+      </div>
+      <div.column.col-6.col-s-6>
+
+      </div>
+    </section>
+
+
     <h2>Components</h2>
     <section>
   <!--  ponder markup vs atrribute for 'value || item'-->

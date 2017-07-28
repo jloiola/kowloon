@@ -1,0 +1,11 @@
+{
+  "@tabs <tab>[]": {
+    "@class": "string",
+    "@active": "bool",
+    "@*": "string"
+  },
+  "@block": "bool",
+  "@class": "string",
+  "@selectedIndex": "integer",
+  "@*": "string"
+}

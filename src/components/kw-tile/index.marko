@@ -1,14 +1,14 @@
-<div.tile>
+<div.tile class=input.class ${input["*"]}>
   <div.tile-icon if(input.icon)>
     <include(input.icon) />
   </div>
   <div.tile-content if(input.content)>
-    <p.tile-title if(input.content.title)>
+    <div.tile-title if(input.content.title)>
       <include(input.content.title) />
-    </p>
-    <p.tile-subtitle if(input.content.subtitle)>
+    </div>
+    <div.tile-subtitle if(input.content.subtitle)>
       <include(input.content.subtitle) />
-    </p>
+    </div>
     <include(input.content.renderBody) />
   </div>
   <div.tile-action if(input.action)>
