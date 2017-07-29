@@ -10,5 +10,6 @@
   "@circle": "bool",
   "@block": "bool",
   "@disabled": "bool",
+  "@class": "string",
   "@*": "string"
 }

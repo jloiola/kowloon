@@ -24,12 +24,12 @@ class {
 }
 
 <!-- if there's an href make an anchor tag  -->
-<a.btn if(input.href) class=[state.classMap, (input.size && "btn-" + input.size), (input.badge && 'badge')]
+<a.btn if(input.href) class=[input.class, state.classMap, (input.size && "btn-" + input.size), (input.badge && 'badge')]
   data-badge=input.badge ${input["*"]}>
   <include(input.renderBody) />
 </a>
 <!-- if there's _not_ an href make a button  -->
-<button.btn if(!input.href) class=[state.classMap, (input.size && "btn-" + input.size), (input.badge && 'badge')]
+<button.btn if(!input.href) class=[input.class, state.classMap, (input.size && "btn-" + input.size), (input.badge && 'badge')]
   data-badge=input.badge ${input.attrs}>
   <include(input.renderBody) />
 </button>

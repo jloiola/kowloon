@@ -5,9 +5,6 @@
     "@class": "string",
     "@*": "string"
   },
-  "@primary": "bool",
-  "@link": "bool",
-  "@right": "bool",
   "@class": "string",
   "@*": "string"
 }

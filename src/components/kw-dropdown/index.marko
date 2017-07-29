@@ -1,0 +1,11 @@
+
+<div.dropdown class=[(input.right &&  "dropdown-right")]>
+  <kw-button.dropdown-toggle ${input["*"]} tabindex="0">
+    <include(input.renderBody) />
+  </kw-button>
+  <kw-menu>
+    <@item for(item in input.items)>
+      <include(item.renderBody) />
+    </@item>
+  </kw-menu>
+</div>
