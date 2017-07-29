@@ -1,6 +1,7 @@
 {
   "@name": "string",
   "@class": "string",
+  "@centered": "bool",
   "@size": {
     "type": "string",
     "enum": ["xs", "sm", "md", "lg", "xl"]

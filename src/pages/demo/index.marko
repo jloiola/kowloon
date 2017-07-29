@@ -232,6 +232,56 @@ style.less {
     <kw-slider value=85></kw-slider>
   </section>
 
+  <h3>Cards</h3>
+  <section>
+    <div.columns>
+      <div.column.col-6>
+        <kw-card>
+
+          <@image src="https://picturepan2.github.io/spectre/img/macos-sierra.jpg" />
+
+          <@header>
+            <@title>Google</@title>
+            <@subtitle>Software and hardware</@subtitle>
+          </@header>
+
+          <@body>
+            Organize the world’s information and make it universally accessible and useful.
+          </@body>
+
+          <@footer>
+            <kw-button primary>Share</kw-button>
+            <kw-button link>Link me</kw-button>
+            <kw-button>Cancel</kw-button>
+          </@footer>
+        </kw-card>
+      </div>
+      <div.column.col-6>
+        <kw-card>
+
+          <@image src="https://picturepan2.github.io/spectre/img/macos-sierra.jpg" />
+
+          <@header>
+            <@title>Google</@title>
+            <@subtitle>Software and hardware</@subtitle>
+          </@header>
+
+          <@body>
+            Organize the world’s information and make it universally accessible and useful.
+          </@body>
+
+          <@footer>
+            <kw-button primary>Share</kw-button>
+            <kw-button link>Link me</kw-button>
+            <kw-button>Cancel</kw-button>
+          </@footer>
+        </kw-card>
+
+      </div>
+    </div>
+
+  </section>
+
   <h3>Chips</h3>
   <style>.chip{margin: 0.5em; }</style>
   <section>
@@ -470,91 +520,71 @@ style.less {
 
   </section>
 
-
-  <h3>Toasts</h3>
-  <section.columns>
-    <div.column.col-4>
-      <kw-toast>Defaut color</kw-toast>
-    </div>
-    <div.column.col-4>
-      <kw-toast color="primary">Via string attr</kw-toast>
-    </div>
-    <div.column.col-4>
-      <kw-toast error>Via flag/bool attr <kw-icon name="clear"></kw-icon></kw-toast>
-    </div>
-  </section>
-
-
-  <h3>Cards</h3>
-  <section>
-    <div.columns>
-      <div.column.col-6>
-        <kw-card>
-
-          <@image src="https://picturepan2.github.io/spectre/img/macos-sierra.jpg" />
-
-          <@header>
-            <@title>Google</@title>
-            <@subtitle>Software and hardware</@subtitle>
-          </@header>
-
-          <@body>
-            Organize the world’s information and make it universally accessible and useful.
-          </@body>
-
-          <@footer>
-            <kw-button primary>Share</kw-button>
-            <kw-button link>Link me</kw-button>
-            <kw-button>Cancel</kw-button>
-          </@footer>
-        </kw-card>
-      </div>
-      <div.column.col-6>
-        <kw-card>
-
-          <@image src="https://picturepan2.github.io/spectre/img/macos-sierra.jpg" />
-
-          <@header>
-            <@title>Google</@title>
-            <@subtitle>Software and hardware</@subtitle>
-          </@header>
-
-          <@body>
-            Organize the world’s information and make it universally accessible and useful.
-          </@body>
-
-          <@footer>
-            <kw-button primary>Share</kw-button>
-            <kw-button link>Link me</kw-button>
-            <kw-button>Cancel</kw-button>
-          </@footer>
-        </kw-card>
-
-      </div>
-    </div>
-
-  </section>
-
-
   <h3>Tiles</h3>
-  <section>
-    <kw-tile>
+  <section.columns style="background-color:white">
+    <kw-tile.column.col-12>
+      <@media>
+        <kw-avatar initial="JL"></kw-avatar>
+      </@media>
       <@content>
         <@title>The Avengers</@title>
-        <@subtitle>Earth's Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle. Earth's Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle. Earth's Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle.</@subtitle>
-        <p><kw-button primary>Cats</kw-button> <kw-button>Dogs</kw-button></p>
+        <@subtitle>Earths Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle. Earths Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle. Earths Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle.</@subtitle>
+        <p><kw-button primary>Yes</kw-button> <kw-button link>no</kw-button></p>
       </@content>
     </kw-tile>
 
-    <kw-tile>
+    <kw-tile.column.col-12>
+      <@media>
+        <kw-avatar initial="DG"></kw-avatar>
+      </@media>
       <@content>
         <@title>The Avengers</@title>
-        <@subtitle>Earth's Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle. Earth's Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle. Earth's Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle.</@subtitle>
+        <@subtitle>Earths Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle. Earths Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle. Earths Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle.</@subtitle>
       </@content>
       <@action>
-       <kw-button primary>Cats</kw-button> <kw-button>Dogs</kw-button>
+       <kw-button primary>Yes</kw-button> <kw-button link>no</kw-button>
       </@action>
     </kw-tile>
+
+
+    <kw-tile.column.col-4 centered>
+      <@media><kw-icon name="mail" size="lg" /></@media>
+      <@content>
+        <@title>virus.exe</@title>
+        <@subtitle>Be careful</@subtitle>
+      </@content>
+      <@action>
+       <kw-button link><kw-icon name="more-vert"/></kw-button>
+      </@action>
+    </kw-tile>
+
+    <kw-tile.column.col-4 centered>
+      <@media><kw-icon name="mail" size="lg" /></@media>
+      <@content>
+        <@title>not-a-virus.bat</@title>
+        <@subtitle>Do not worry</@subtitle>
+      </@content>
+      <@action>
+       <kw-button link><kw-icon name="more-vert"/></kw-button>
+      </@action>
+    </kw-tile>
+
   </section>
+
+
+    <h3>Toasts</h3>
+    <section.columns>
+      <div.column.col-4>
+        <kw-toast>Defaut color</kw-toast>
+      </div>
+      <div.column.col-4>
+        <kw-toast color="primary">Via string attr</kw-toast>
+      </div>
+      <div.column.col-4>
+        <kw-toast error>Via flag/bool attr <kw-icon name="clear"></kw-icon></kw-toast>
+      </div>
+    </section>
+
+
 
 </div>
