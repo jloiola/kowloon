@@ -1,8 +1,0 @@
-{
-  "dependencies": [
-    "../base/browser.json",
-    "less-import: ./variables.less",
-    "../page/browser.json",
-    "./style.less"
-  ]
-}

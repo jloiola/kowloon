@@ -16,6 +16,12 @@ class {
 
 <ul.tab class=[(input.block && "tab-block")] ${input["*"]}>
   <li.tab-item class={'active': state.selectedIndex == loop.getIndex()} for(tab in input.tabs | status-var=loop) on-click("handleOnClick", loop.getIndex())>
-    <include(tab.renderBody)/>
+    <a href class=[(tab.badge && "badge")] data-badge=tab.badge>
+      <include(tab.renderBody)/>
+    </a>
   </li>
+  <li.tab-item.tab-action if(input.action)>
+    <include(input.action.renderBody)/>
+  </li>
+
 </ul>

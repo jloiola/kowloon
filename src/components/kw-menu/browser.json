@@ -1,5 +1,6 @@
 {
   "dependencies": [
+    "less: spectre.css/src/labels.less",
     "less: spectre.css/src/menus.less"
   ]
 }

@@ -1,3 +1,4 @@
+
 class {
   onMount(input) {
     console.log("onMount", input)
@@ -8,6 +9,10 @@ class {
   closeModal(name){
     this.getComponent(name).hide();
   }
+}
+
+style.less {
+
 }
 
 <div ${input["*"]}>
@@ -86,15 +91,9 @@ class {
         </@header>
         <@nav>
           <kw-tabs block>
-            <@tab>
-              <a href="#">About</a>
-            </@tab>
-            <@tab>
-              <a href="#">Projects</a>
-            </@tab>
-            <@tab>
-              <a href="#">Comments</a>
-            </@tab>
+            <@tab>About</@tab>
+            <@tab>Projects</@tab>
+            <@tab>Comments</@tab>
           </kw-tabs>
         </@nav>
         <@body>
@@ -392,6 +391,50 @@ class {
     </div>
   </section>
 
+  <h3>Breadcrumbs</h3>
+  <section>
+    <kw-breadcrumbs>
+      <@item><kw-button link>One</kw-button></@item>
+      <@item><kw-button link>Two</kw-button></@item>
+      <@item><kw-button link>Three</kw-button></@item>
+    </kw-breadcrumbs>
+  </section>
+
+  <h3>Tabs</h3>
+  <!--  move a tag into component and handle click events -->
+  <section.columns>
+    <div.column.col-6>
+      <kw-tabs>
+        <@tab>Music</@tab>
+        <@tab>Playlist</@tab>
+        <@tab>Radio</@tab>
+        <@tab>Store</@tab>
+      </kw-tabs>
+    </div>
+    <div.column.col-6>
+      <kw-tabs block>
+        <@tab>Music</@tab>
+        <@tab>Playlist</@tab>
+        <@tab>Radio</@tab>
+      </kw-tabs>
+    </div>
+    <div.column.col-12>
+      <kw-tabs>
+        <@tab badge=9>Music</@tab>
+        <@tab>Playlist</@tab>
+        <@tab>Radio</@tab>
+        <@action>
+          <div class="input-group input-inline">
+            <input class="form-input input-sm" type="text" placeholder="search">
+            <button class="btn btn-primary btn-sm input-group-btn">Search</button>
+          </div>
+        </@action>
+      </kw-tabs>
+    </div>
+
+  </section>
+
+
   <h3>Toasts</h3>
   <section.columns>
     <!-- hmmm -->
@@ -408,9 +451,8 @@ class {
   </section>
 
 
+  <h3>Cards</h3>
   <section>
-    <h3>Cards</h3>
-    <!-- hmmm -->
     <div.columns>
       <div.column.col-6>
         <kw-card>
@@ -460,10 +502,8 @@ class {
   </section>
 
 
-
+  <h3>Tiles</h3>
   <section>
-    <h3>Tiles</h3>
-
     <kw-tile>
       <@content>
         <@title>The Avengers</@title>

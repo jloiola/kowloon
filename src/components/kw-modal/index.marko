@@ -1,4 +1,5 @@
 
+// think about a modals manager ... page?
 class {
   onCreate(input, out) {
     this.state = {
@@ -29,7 +30,7 @@ class {
 
 <div.modal class=[(input.sm &&  "modal-sm"), {active: state.active}]>
 
-  <div.modal-overlay></div>
+  <div.modal-overlay on-click("hide")></div>
   <div.modal-container>
     <div.modal-header if(input.header)>
       <button class="btn btn-clear float-right" on-click("hide")></button>

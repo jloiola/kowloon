@@ -1,5 +1,3 @@
 {
-  "dependencies": [
-    "~/src/styles/base/browser.json"
-  ]
+  "dependencies": []
 }

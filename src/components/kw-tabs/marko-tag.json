@@ -2,6 +2,11 @@
   "@tabs <tab>[]": {
     "@class": "string",
     "@active": "bool",
+    "@badge": "integer",
+    "@*": "string"
+  },
+  "@action <tab-action>": {
+    "@class": "string",
     "@*": "string"
   },
   "@block": "bool",
