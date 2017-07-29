@@ -1,5 +1,17 @@
 
-<div.dropdown class=[(input.right &&  "dropdown-right")]>
+class {
+  onCreate(input) {
+    this.state = {
+      active: false
+    }
+  }
+
+  onInput(input) {
+    this.state.active = input.active;
+  }
+}
+
+<div.dropdown class=[(input.right &&  "dropdown-right"), {active: state.active}]>
   <kw-button.dropdown-toggle ${input["*"]} tabindex="0">
     <include(input.renderBody) />
   </kw-button>

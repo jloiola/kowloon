@@ -1,5 +1,6 @@
 {
   "dependencies": [
+    "less-import: spectre.css/src/tooltips.less",
     "less: spectre.css/src/bars.less"
   ]
 }
