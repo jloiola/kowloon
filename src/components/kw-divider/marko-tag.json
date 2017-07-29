@@ -1,0 +1,5 @@
+{
+  "@label": "string",
+  "@vertical": "bool",
+  "@centered": "bool"
+}

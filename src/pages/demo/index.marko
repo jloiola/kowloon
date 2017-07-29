@@ -572,19 +572,49 @@ style.less {
   </section>
 
 
-    <h3>Toasts</h3>
-    <section.columns>
-      <div.column.col-4>
-        <kw-toast>Defaut color</kw-toast>
-      </div>
-      <div.column.col-4>
-        <kw-toast color="primary">Via string attr</kw-toast>
-      </div>
-      <div.column.col-4>
-        <kw-toast error>Via flag/bool attr <kw-icon name="clear"></kw-icon></kw-toast>
-      </div>
-    </section>
+  <h3>Toasts</h3>
+  <section.columns>
+    <div.column.col-4>
+      <kw-toast>Defaut color</kw-toast>
+    </div>
+    <div.column.col-4>
+      <kw-toast color="primary">Via string attr</kw-toast>
+    </div>
+    <div.column.col-4>
+      <kw-toast error>Via flag/bool attr <kw-icon name="clear"></kw-icon></kw-toast>
+    </div>
+  </section>
 
+  <h2>Utilities</h2>
+
+  <h3>Divider</h3>
+  <section.columns>
+    <div.column.col-12>
+      <kw-divider />
+    </div>
+    <div.column.col-12>
+      <kw-divider label="Hi there" centered />
+    </div>
+    <div.column.col-12>
+      <div.columns>
+        <div.column>
+          Random things
+        </div>
+        <kw-divider label="OR" vertical />
+        <div.column>
+          Specific things
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <h3>Loading</h3>
+  <p>Leave as class, no element?</p>
+  <section.columns>
+    <div.column.col-12>
+      <div.loading></div>
+    </div>
+  </section>
 
 
 </div>
