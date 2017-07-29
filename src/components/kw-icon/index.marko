@@ -1,3 +1,22 @@
 
-<i.icon class=["icon-${input.name}", input.class, input.size] >
-</i>
+style.less {
+  .icon {
+    &.xs {
+      font-size: 0.25em;
+    }
+    &.sm {
+      font-size: 0.5em;
+    }
+    &.md {
+      font-size: 1.0em;
+    }
+    &.lg {
+      font-size: 2em;
+    }
+    &.xl {
+      font-size: 4em;
+    }
+  }
+}
+
+<i.icon class=["icon-${input.name}", input.class, input.size] />

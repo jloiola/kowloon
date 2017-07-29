@@ -1,3 +1,19 @@
+class {
+  onCreate (input, out) {
+    this.state = {
+      selectedIndex: input.selectedIndex || 0
+    }
+  }
+
+  handleOnClick (index, ev, el) {
+    ev.preventDefault();
+    ev.target.blur();
+    this.state.selectedIndex = index;
+    // emit an Id too?
+    this.emit("onclick", index, ev, el)
+  }
+}
+
 <ul.tab class=[(input.block && "tab-block")] ${input["*"]}>
   <li.tab-item class={'active': state.selectedIndex == loop.getIndex()} for(tab in input.tabs | status-var=loop) on-click("handleOnClick", loop.getIndex())>
     <include(tab.renderBody)/>

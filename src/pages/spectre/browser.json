@@ -1,6 +1,0 @@
-{
-  "dependencies": [
-    "~/src/styles/base/browser.json",
-    "~/src/styles/page/browser.json"
-  ]
-}

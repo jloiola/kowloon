@@ -17,5 +17,6 @@
   "@footer <footer>": {
     "@class": "string"
   },
+  "@class": "string",
   "@*": "string"
 }

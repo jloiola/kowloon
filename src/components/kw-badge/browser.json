@@ -1,11 +1,5 @@
 {
   "dependencies": [
-    "less-import: spectre.css/src/variables.less",
-    "less-import: spectre.css/src/mixins.less",
-    "less-import: spectre.css/src/normalize.less",
-    "less-import: spectre.css/src/base.less",
-    "less-import: spectre.css/src/utilities.less",
-    "less-import: spectre.css/src/animations.less",
     "less: spectre.css/src/badges.less"
   ]
 }

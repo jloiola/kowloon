@@ -20,7 +20,6 @@ class {
   }
   handleOnClick (ev, el) {
     if(!this.input.href) {
-      ev.preventDefault();
       this.emit("click", ev, el);
     }
   }

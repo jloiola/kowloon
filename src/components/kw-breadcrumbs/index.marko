@@ -1,0 +1,15 @@
+class {
+
+}
+
+style.less {
+
+}
+
+//  figure out how we can allow JS binding to items
+//  and also allow nested item elements
+<ul.breadcrumb class=[input.class] ${input["*"]}>
+  <li.breadcrumb-item for(item in input.items)>
+    <include(item.renderBody) />
+  </li>
+</ul>
