@@ -1,0 +1,11 @@
+{
+  "@steps <step>[]": {
+    "@tooltip": "expression",
+    "@active": "bool",
+    "@class": "string",
+    "@*": "string"
+  },
+  "@active": "integer",
+  "@class": "string",
+  "@*": "string"
+}

@@ -333,26 +333,6 @@ style.less {
     </div>
   </section>
 
-  <h3>Popovers</h3>
-  <section>
-    Many companies, like <kw-popover position="right"> <a>apple</a>
-      <@content>
-        <kw-card>
-          <@header>
-            <@title>Apple</@title>
-            <@subtitle>Software and Hardware</@subtitle>
-          </@header>
-          <@body>To make a overpriced 'luxury' things.</@body>
-          <@footer>
-            <kw-button primary>Buy</kw-button>
-          </@footer>
-        </kw-card>
-      </@content>
-    </kw-popover> sell things at exorbitant prices.
-  </section>
-
-
-
   <h3>Modals</h3>
   <style>.dropdown{margin: 0.5em}</style>
   <section.columns>
@@ -434,18 +414,72 @@ style.less {
 
   </section>
 
+  <h3>Pagination</h3>
+  <section.columns>
+    <div.column.col-12>
+      TODO
+    </div>
+  </section>
+
+  <h3>Navs</h3>
+  <section.columns>
+    <div.column.col-12>
+      TODO
+    </div>
+  </section>
+
+  <h3>Popovers</h3>
+  <p>I want to be able to provide an object and get a popover card too. Need footer action delegater too? What about a custom template include? Or mark an element as the popover content and have a trigger?</p>
+  <section.columns>
+    <div.column.col-12>
+      Many companies, like <kw-popover position="right"> <a>apple</a>
+        <@content>
+          <kw-card>
+            <@header>
+              <@title>Apple</@title>
+              <@subtitle>Software and Hardware</@subtitle>
+            </@header>
+            <@body>To make a overpriced 'luxury' things.</@body>
+            <@footer>
+              <kw-button primary>Buy</kw-button>
+            </@footer>
+          </kw-card>
+        </@content>
+      </kw-popover> sell things at exorbitant prices.
+    </div>
+  </section>
+
+
+  <h3>Steps</h3>
+  <section.columns>
+    <div.column.col-12>
+      <kw-steps>
+        <@step tooltip="Herd animals">Step 1</@step>
+        <@step tooltip="?">Step 2</@step>
+        <@step tooltip="Profift">Step 3</@step>
+      </kw-steps>
+    </div>
+    <div.column.col-12>
+      <kw-steps>
+        <@step tooltip="Herd animals">Step 1</@step>
+        <@step tooltip="?">Step 2</@step>
+        <@step active tooltip="Profit">Step 3</@step>
+        <@step tooltip="Measue">Step 4</@step>
+      </kw-steps>
+    </div>
+
+  </section>
+
 
   <h3>Toasts</h3>
   <section.columns>
-    <!-- hmmm -->
-
-    <div.column.col-3>
+    <div.column.col-4>
       <kw-toast>Defaut color</kw-toast>
     </div>
-    <div.column.col-3>
+    <div.column.col-4>
       <kw-toast color="primary">Via string attr</kw-toast>
     </div>
-    <div.column.col-3>
+    <div.column.col-4>
       <kw-toast error>Via flag/bool attr <kw-icon name="clear"></kw-icon></kw-toast>
     </div>
   </section>

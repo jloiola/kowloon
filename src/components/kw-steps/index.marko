@@ -1,0 +1,22 @@
+<!--  how to set active index ... -->
+class {
+  onCreate(input, out) {
+    this.state = {
+      active: input.active || 0
+    }
+  }
+
+  onInput(input) {
+    if(input.active) {
+      this.state.active = input.active;
+    }
+  }
+}
+
+<ul.step class=[input.class] ${input["*"]}>
+  <li.step-item class=[(step.active && "active")] for(step in input.steps | status-var=loop)>
+    <a href class=[(step.tooltip && "tooltip")] data-tooltip=step.tooltip>
+      <include(step.renderBody) />
+    </a>
+  </li>
+</ul>
