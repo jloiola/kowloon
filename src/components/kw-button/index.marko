@@ -1,35 +1,38 @@
 
 //TODO think about adding i.icon and various icon sets being pluggable
-
 //TODO what about btn-group ... leave it div for now
 
 class {
   onCreate (input, out) {
-
+    this.state = {classMap: {}};
   }
 
   onInput (input) {
-    this.state = {
-      "classMap": {
-        'btn-primary': input.primary,
-        'btn-link': input.link,
-        'btn-block': input.block,
-        'btn-action': input.action,
-        'circle': input.circle,
-        'loading': input.loading,
-        'disabled': input.disabled
-      }
+    this.state.classMap = {
+      'btn-primary': input.primary,
+      'btn-link': input.link,
+      'btn-block': input.block,
+      'btn-action': input.action,
+      'circle': input.circle,
+      'loading': input.loading,
+      'disabled': input.disabled
     };
+  }
+  handleOnClick (ev, el) {
+    if(!this.input.href) {
+      ev.preventDefault();
+      this.emit("click", ev, el);
+    }
   }
 }
 
 <!-- if there's an href make an anchor tag  -->
 <a.btn if(input.href) class=[input.class, state.classMap, (input.size && "btn-" + input.size), (input.badge && 'badge')]
-  data-badge=input.badge ${input["*"]}>
+  data-badge=input.badge ${input["*"]} on-click("handleOnClick")>
   <include(input.renderBody) />
 </a>
 <!-- if there's _not_ an href make a button  -->
 <button.btn if(!input.href) class=[input.class, state.classMap, (input.size && "btn-" + input.size), (input.badge && 'badge')]
-  data-badge=input.badge ${input.attrs}>
+  data-badge=input.badge ${input.attrs} on-click("handleOnClick")>
   <include(input.renderBody) />
 </button>

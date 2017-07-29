@@ -1,0 +1,21 @@
+{
+  "@header <header>": {
+    "@title <title>": {
+      "@class": "string",
+      "@*": "string"
+    },
+    "@class": "string",
+    "@*": "string"
+  },
+  "@body <body>": {
+    "@class": "string",
+    "@*": "string"
+  },
+  "@footer <footer>": {
+    "@class": "string",
+    "@*": "string"
+  },
+  "@name": "string",
+  "@class": "string",
+  "@*": "string"
+}

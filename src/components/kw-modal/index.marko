@@ -1,0 +1,52 @@
+
+class {
+  onCreate(input, out) {
+    this.state = {
+      name: input.name,
+      active: input.active || false
+    }
+  }
+
+  onInput(input, out) {
+    this.state.active = input.active;
+  }
+
+  onMount() {
+    console.log(this, "modal", "mounted")
+    this.subscribeTo(document.body).on("openmodal", function(name, ev) {
+      console.log(ev, name, "openmodal");
+    });
+  }
+
+  show() {
+    this.el.classList.add("active");
+  }
+
+  hide() {
+    this.el.classList.remove("active");
+  }
+}
+
+<div.modal class=[(input.sm &&  "modal-sm"), {active: state.active}]>
+
+  <div.modal-overlay></div>
+  <div.modal-container>
+    <div.modal-header if(input.header)>
+      <button class="btn btn-clear float-right" on-click("hide")></button>
+      <div.modal-title if(input.header.title)>
+        <include(input.header.title.renderBody) />
+      </div>
+      <include(input.header.renderBody) />
+    </div>
+
+    <div.modal-body if(input.body)>
+      <div.content>
+        <include(input.body.renderBody) />
+      </div>
+    </div>
+
+    <div.modal-footer if(input.footer)>
+      <include(input.footer.renderBody) />
+    </div>
+  </div>
+</div>
