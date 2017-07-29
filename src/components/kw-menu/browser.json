@@ -1,0 +1,5 @@
+{
+  "dependencies": [
+    "less: spectre.css/src/menus.less"
+  ]
+}

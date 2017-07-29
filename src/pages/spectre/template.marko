@@ -73,7 +73,7 @@
       <div.column.col-6>
         <kw-panel>
           <@header class="text-center">
-            <kw-avatar size="xl" initial="JL" />
+            <kw-avatar size="xl" src="http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/256/Avengers-Hulk-icon.png"></kw-avatar>
             <@title>The Hulk</@title>
             <@subtitle>Bruce Banner</@subtitle>
           </@header>
@@ -122,7 +122,7 @@
           <@body>
             <kw-tile style="margin: 1.5rem 0;">
               <@icon>
-                <kw-avatar initial="AF" />
+                <kw-avatar src="http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/256/Avengers-Thor-icon.png"></kw-avatar>
               </@icon>
               <@content>
                 <@title>Thor Odinson</@title>
@@ -131,7 +131,7 @@
             </kw-tile>
             <kw-tile style="margin: 1.5rem 0;">
               <@icon>
-                <kw-avatar initial="JL" />
+                <kw-avatar src="http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/256/Avengers-Hulk-icon.png"></kw-avatar>
               </@icon>
               <@content>
                 <@title>Bruce Banner</@title>
@@ -140,7 +140,7 @@
             </kw-tile>
             <kw-tile style="margin: 1.5rem 0;">
               <@icon>
-                <kw-avatar initial="AA " />
+                <kw-avatar src="http://femoticons.net/images/stickers/superheroes/ironman_head.png"></kw-avatar>
               </@icon>
               <@content>
                 <@title>Tony Stark</@title>
@@ -199,12 +199,27 @@
 
     <h3>Avatars</h3>
     <section>
-      <kw-avatar initial="JL" size="xl" />
-      <kw-avatar initial="AA" size="lg" />
-      <kw-avatar initial="DG" size="lg" />
-      <kw-avatar initial="AF" />
-      <kw-avatar initial="CK" size="sm" />
-      <kw-avatar initial="NG" size="sm" />
+      <kw-avatar initial="JL" size="xl">
+        <@icon src="https://picturepan2.github.io/spectre/img/avatar-5.png" />
+      </kw-avatar>
+
+      <kw-avatar src="https://picturepan2.github.io/spectre/img/avatar-2.png" size="lg">
+        <@icon src="https://picturepan2.github.io/spectre/img/avatar-3.png" />
+      </kw-avatar>
+
+      <kw-avatar src="https://picturepan2.github.io/spectre/img/avatar-4.png">
+        <@icon src="https://picturepan2.github.io/spectre/img/avatar-3.png" />
+      </kw-avatar>
+
+      <kw-avatar src="https://picturepan2.github.io/spectre/img/avatar-3.png" size="s" >
+        <@icon src="https://picturepan2.github.io/spectre/img/avatar-1.png" />
+      </kw-avatar>
+
+      <kw-avatar src="https://picturepan2.github.io/spectre/img/avatar-5.png" size="xs">
+        <@icon src="https://picturepan2.github.io/spectre/img/avatar-1.png" />
+      </kw-avatar>
+
+      <kw-avatar src="https://picturepan2.github.io/spectre/img/avatar-2.png" />
     </section>
 
     <h3>Badges</h3>
@@ -212,7 +227,7 @@
     <section>
       <kw-badge badge="8">Messages</kw-badge>
       <kw-badge>Notifications</kw-badge>
-      <kw-avatar badge="8" initial="JL" />
+      <kw-avatar badge="8" initial="JL"></kw-avatar>
       <kw-button badge="19">Messages</kw-button>
 
     </section>
@@ -240,43 +255,6 @@
         <kw-chip>Three</kw-chip>
       </kw-chips>
 
-    </section>
-
-    <h3>Menus</h3>
-    <style>.chip{margin: 0.5em; }</style>
-    <section.columns>
-      <div.column.col-4>
-        <kw-menu>
-          <@item>
-            <kw-avatar initial="JL"></kw-avatar>
-            Javiar Lopez
-          </@item>
-          <@item divider />
-          <@item badge=2>
-            <a href="#">My profile</a>
-          </@item>
-          <@item>
-            <a href="#">Settings</a>
-          </@item>
-          <@item>
-            <a href="#">Logout</a>
-          </@item>
-        </kw-menu>
-      </div>
-      <div.column.col-4>
-        <kw-menu>
-          <@item divider="Links" />
-          <@item>
-            <a href="#"><i class="icon icon-link"></i>&nbsp;Slack</a>
-          </@item>
-          <@item>
-            <a href="#"><i class="icon icon-link"></i>&nbsp;HipChat</a>
-          </@item>
-          <@item>
-            <a href="#"><i class="icon icon-link"></i>&nbsp;Skype</a>
-          </@item>
-        </kw-menu>
-      </div>
     </section>
 
     <h3>Popovers</h3>

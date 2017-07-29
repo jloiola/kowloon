@@ -1,0 +1,10 @@
+{
+  "@items <item>[]": {
+    "@badge": "integer",
+    "@divider": "string",
+    "@class": "string",
+    "@*": "string"
+  },
+  "@class": "string",
+  "@*": "string"
+}

@@ -1,0 +1,15 @@
+// do this so we can call as divider with or w/o label; may change
+$ var isDivider = function(item) {return item.divider || typeof(item.divider) === "string"};
+
+<ul class="menu">
+  <li for(item in input.items) class={'divider': isDivider(item), 'menu-item': !isDivider(item)}
+    data-content=(isDivider(item) ? item.divider : "")>
+    <!--  all primary for now ...  -->
+    <div.menu-badge if(item.badge)>
+      <label class="label label-primary">${item.badge}</label>
+    </div>
+    <if(!isDivider(item))>
+      <include(item.renderBody) />
+    </if>
+  </li>
+</ul>
