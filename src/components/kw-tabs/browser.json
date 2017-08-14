@@ -1,6 +1,4 @@
 {
   "dependencies": [
-    "less: spectre.css/src/navigation.less",
-    "less: spectre.css/src/tabs.less"
   ]
 }
