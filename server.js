@@ -1,6 +1,5 @@
 require('require-self-ref');
 
-require('marko/express');
 require('marko/node-require');
 require('lasso/node-require-no-op').enable('.scss', '.sass', '.less', '.css');
 
