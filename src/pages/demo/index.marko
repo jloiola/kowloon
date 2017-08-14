@@ -28,6 +28,7 @@ style.less {
     </ul>
   </section>
 
+  <kw-phone></kw-phone>
 
   <h3>Buttons</h3>
   <section>
@@ -341,7 +342,9 @@ style.less {
   <section.columns>
     <div.column.col-4>
       <kw-dropdown primary>
-        <span>Chat app <i class="icon icon-caret"></i></span>
+        <@selection>
+          <span>Chat app <i class="icon icon-caret"></i></span>
+        </@selection>
         <@item>
           <a><i class="icon icon-link"></i>&nbsp;Slack</a>
         </@item>
@@ -355,7 +358,9 @@ style.less {
     </div>
     <div.column.col-4>
       <kw-dropdown right>
-        <span>Chat app <i class="icon icon-caret"></i></span>
+        <@selection>
+          <span>Chat app <i class="icon icon-caret"></i></span>
+        </@selection>
         <@item>
           <a><i class="icon icon-link"></i>&nbsp;Slack</a>
         </@item>
@@ -369,7 +374,9 @@ style.less {
     </div>
     <div.column.col-4>
       <kw-dropdown link>
-        <span>Chat app <i class="icon icon-caret"></i></span>
+        <@selection>
+          <span>Chat app <i class="icon icon-caret"></i></span>
+        </@selection>
         <@item>
           <a><i class="icon icon-link"></i>&nbsp;Slack</a>
         </@item>

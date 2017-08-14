@@ -1,4 +1,7 @@
 {
+  "@selection <selection>": {
+
+  },
   "@items <item>[]": {
     "@badge": "integer",
     "@divider": "string",

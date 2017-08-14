@@ -1,0 +1,270 @@
+
+class {
+  onCreate(input) {
+
+    this.state = {
+      selected: null,
+      selectedIndex: null,
+      options: [
+        {"countryCode": "DZ", "callingCode": 213, "name": "Algeria"},
+        {"countryCode": "AD", "callingCode": 376, "name": "Andorra"},
+        {"countryCode": "AO", "callingCode": 244, "name": "Angola"},
+        {"countryCode": "AI", "callingCode": 1264, "name": "Anguilla"},
+        {"countryCode": "AG", "callingCode": 1268, "name": "Antigua &amp; Barbuda"},
+        {"countryCode": "AR", "callingCode": 54,  "name": "Argentina"},
+        {"countryCode": "AM", "callingCode": 374, "name": "Armenia"},
+        {"countryCode": "AW", "callingCode": 297, "name": "Aruba"},
+        {"countryCode": "AU", "callingCode": 61,  "name": "Australia"},
+        {"countryCode": "AT", "callingCode": 43,  "name": "Austria"},
+        {"countryCode": "AZ", "callingCode": 994, "name": "Azerbaijan"},
+        {"countryCode": "BS", "callingCode": 1242, "name": "Bahamas"},
+        {"countryCode": "BH", "callingCode": 973, "name": "Bahrain"},
+        {"countryCode": "BD", "callingCode": 880, "name": "Bangladesh"},
+        {"countryCode": "BB", "callingCode": 1246, "name": "Barbados"},
+        {"countryCode": "BY", "callingCode": 375, "name": "Belarus"},
+        {"countryCode": "BE", "callingCode": 32,  "name": "Belgium"},
+        {"countryCode": "BZ", "callingCode": 501, "name": "Belize"},
+        {"countryCode": "BJ", "callingCode": 229, "name": "Benin"},
+        {"countryCode": "BM", "callingCode": 1441, "name": "Bermuda"},
+        {"countryCode": "BT", "callingCode": 975, "name": "Bhutan"},
+        {"countryCode": "BO", "callingCode": 591, "name": "Bolivia"},
+        {"countryCode": "BA", "callingCode": 387, "name": "Bosnia Herzegovina"},
+        {"countryCode": "BW", "callingCode": 267, "name": "Botswana"},
+        {"countryCode": "BR", "callingCode": 55,  "name": "Brazil"},
+        {"countryCode": "BN", "callingCode": 673, "name": "Brunei"},
+        {"countryCode": "BG", "callingCode": 359, "name": "Bulgaria"},
+        {"countryCode": "BF", "callingCode": 226, "name": "Burkina Faso"},
+        {"countryCode": "BI", "callingCode": 257, "name": "Burundi"},
+        {"countryCode": "KH", "callingCode": 855, "name": "Cambodia"},
+        {"countryCode": "CM", "callingCode": 237, "name": "Cameroon"},
+        {"countryCode": "CA", "callingCode": 1,   "name": "Canada"},
+        {"countryCode": "CV", "callingCode": 238, "name": "Cape Verde Islands"},
+        {"countryCode": "KY", "callingCode": 1345, "name": "Cayman Islands"},
+        {"countryCode": "CF", "callingCode": 236, "name": "Central African Republic"},
+        {"countryCode": "CL", "callingCode": 56,  "name": "Chile"},
+        {"countryCode": "CN", "callingCode": 86,  "name": "China"},
+        {"countryCode": "CO", "callingCode": 57,  "name": "Colombia"},
+        {"countryCode": "KM", "callingCode": 269, "name": "Comoros"},
+        {"countryCode": "CG", "callingCode": 242, "name": "Congo"},
+        {"countryCode": "CK", "callingCode": 682, "name": "Cook Islands"},
+        {"countryCode": "CR", "callingCode": 506, "name": "Costa Rica"},
+        {"countryCode": "HR", "callingCode": 385, "name": "Croatia"},
+        {"countryCode": "CU", "callingCode": 53,  "name": "Cuba"},
+        {"countryCode": "CY", "callingCode": 90,  "name": "Cyprus - North"},
+        {"countryCode": "CY", "callingCode": 357, "name": "Cyprus - South"},
+        {"countryCode": "CZ", "callingCode": 420, "name": "Czech Republic"},
+        {"countryCode": "DK", "callingCode": 45,  "name": "Denmark"},
+        {"countryCode": "DJ", "callingCode": 253, "name": "Djibouti"},
+        {"countryCode": "DM", "callingCode": 1809, "name": "Dominica"},
+        {"countryCode": "DO", "callingCode": 1809, "name": "Dominican Republic"},
+        {"countryCode": "EC", "callingCode": 593, "name": "Ecuador"},
+        {"countryCode": "EG", "callingCode": 20,  "name": "Egypt"},
+        {"countryCode": "SV", "callingCode": 503, "name": "El Salvador"},
+        {"countryCode": "GQ", "callingCode": 240, "name": "Equatorial Guinea"},
+        {"countryCode": "ER", "callingCode": 291, "name": "Eritrea"},
+        {"countryCode": "EE", "callingCode": 372, "name": "Estonia"},
+        {"countryCode": "ET", "callingCode": 251, "name": "Ethiopia"},
+        {"countryCode": "FK", "callingCode": 500, "name": "Falkland Islands"},
+        {"countryCode": "FO", "callingCode": 298, "name": "Faroe Islands"},
+        {"countryCode": "FJ", "callingCode": 679, "name": "Fiji"},
+        {"countryCode": "FI", "callingCode": 358, "name": "Finland"},
+        {"countryCode": "FR", "callingCode": 33,  "name": "France"},
+        {"countryCode": "GF", "callingCode": 594, "name": "French Guiana"},
+        {"countryCode": "PF", "callingCode": 689, "name": "French Polynesia"},
+        {"countryCode": "GA", "callingCode": 241, "name": "Gabon"},
+        {"countryCode": "GM", "callingCode": 220, "name": "Gambia"},
+        {"countryCode": "GE", "callingCode": 7880, "name": "Georgia"},
+        {"countryCode": "DE", "callingCode": 49,  "name": "Germany"},
+        {"countryCode": "GH", "callingCode": 233, "name": "Ghana"},
+        {"countryCode": "GI", "callingCode": 350, "name": "Gibraltar"},
+        {"countryCode": "GR", "callingCode": 30,  "name": "Greece"},
+        {"countryCode": "GL", "callingCode": 299, "name": "Greenland"},
+        {"countryCode": "GD", "callingCode": 1473, "name": "Grenada"},
+        {"countryCode": "GP", "callingCode": 590, "name": "Guadeloupe"},
+        {"countryCode": "GU", "callingCode": 671, "name": "Guam"},
+        {"countryCode": "GT", "callingCode": 502, "name": "Guatemala"},
+        {"countryCode": "GN", "callingCode": 224, "name": "Guinea"},
+        {"countryCode": "GW", "callingCode": 245, "name": "Guinea - Bissau"},
+        {"countryCode": "GY", "callingCode": 592, "name": "Guyana"},
+        {"countryCode": "HT", "callingCode": 509, "name": "Haiti"},
+        {"countryCode": "HN", "callingCode": 504, "name": "Honduras"},
+        {"countryCode": "HK", "callingCode": 852, "name": "Hong Kong"},
+        {"countryCode": "HU", "callingCode": 36,  "name": "Hungary"},
+        {"countryCode": "IS", "callingCode": 354, "name": "Iceland"},
+        {"countryCode": "IN", "callingCode": 91,  "name": "India"},
+        {"countryCode": "ID", "callingCode": 62,  "name": "Indonesia"},
+        {"countryCode": "IQ", "callingCode": 964, "name": "Iraq"},
+        {"countryCode": "IR", "callingCode": 98,  "name": "Iran"},
+        {"countryCode": "IE", "callingCode": 353, "name": "Ireland"},
+        {"countryCode": "IL", "callingCode": 972, "name": "Israel"},
+        {"countryCode": "IT", "callingCode": 39,  "name": "Italy"},
+        {"countryCode": "JM", "callingCode": 1876, "name": "Jamaica"},
+        {"countryCode": "JP", "callingCode": 81,  "name": "Japan"},
+        {"countryCode": "JO", "callingCode": 962, "name": "Jordan"},
+        {"countryCode": "KZ", "callingCode": 7,   "name": "Kazakhstan"},
+        {"countryCode": "KE", "callingCode": 254, "name": "Kenya"},
+        {"countryCode": "KI", "callingCode": 686, "name": "Kiribati"},
+        {"countryCode": "KP", "callingCode": 850, "name": "Korea - North"},
+        {"countryCode": "KR", "callingCode": 82,  "name": "Korea - South"},
+        {"countryCode": "KW", "callingCode": 965, "name": "Kuwait"},
+        {"countryCode": "KG", "callingCode": 996, "name": "Kyrgyzstan"},
+        {"countryCode": "LA", "callingCode": 856, "name": "Laos"},
+        {"countryCode": "LV", "callingCode": 371, "name": "Latvia"},
+        {"countryCode": "LB", "callingCode": 961, "name": "Lebanon"},
+        {"countryCode": "LS", "callingCode": 266, "name": "Lesotho"},
+        {"countryCode": "LR", "callingCode": 231, "name": "Liberia"},
+        {"countryCode": "LY", "callingCode": 218, "name": "Libya"},
+        {"countryCode": "LI", "callingCode": 417, "name": "Liechtenstein"},
+        {"countryCode": "LT", "callingCode": 370, "name": "Lithuania"},
+        {"countryCode": "LU", "callingCode": 352, "name": "Luxembourg"},
+        {"countryCode": "MO", "callingCode": 853, "name": "Macao"},
+        {"countryCode": "MK", "callingCode": 389, "name": "Macedonia"},
+        {"countryCode": "MG", "callingCode": 261, "name": "Madagascar"},
+        {"countryCode": "MW", "callingCode": 265, "name": "Malawi"},
+        {"countryCode": "MY", "callingCode": 60,  "name": "Malaysia"},
+        {"countryCode": "MV", "callingCode": 960, "name": "Maldives"},
+        {"countryCode": "ML", "callingCode": 223, "name": "Mali"},
+        {"countryCode": "MT", "callingCode": 356, "name": "Malta"},
+        {"countryCode": "MH", "callingCode": 692, "name": "Marshall Islands"},
+        {"countryCode": "MQ", "callingCode": 596, "name": "Martinique"},
+        {"countryCode": "MR", "callingCode": 222, "name": "Mauritania"},
+        {"countryCode": "YT", "callingCode": 269, "name": "Mayotte"},
+        {"countryCode": "MX", "callingCode": 52,  "name": "Mexico"},
+        {"countryCode": "FM", "callingCode": 691, "name": "Micronesia"},
+        {"countryCode": "MD", "callingCode": 373, "name": "Moldova"},
+        {"countryCode": "MC", "callingCode": 377, "name": "Monaco"},
+        {"countryCode": "MN", "callingCode": 976, "name": "Mongolia"},
+        {"countryCode": "MS", "callingCode": 1664, "name": "Montserrat"},
+        {"countryCode": "MA", "callingCode": 212, "name": "Morocco"},
+        {"countryCode": "MZ", "callingCode": 258, "name": "Mozambique"},
+        {"countryCode": "MN", "callingCode": 95,  "name": "Myanmar"},
+        {"countryCode": "NA", "callingCode": 264, "name": "Namibia"},
+        {"countryCode": "NR", "callingCode": 674, "name": "Nauru"},
+        {"countryCode": "NP", "callingCode": 977, "name": "Nepal"},
+        {"countryCode": "NL", "callingCode": 31,  "name": "Netherlands"},
+        {"countryCode": "NC", "callingCode": 687, "name": "New Caledonia"},
+        {"countryCode": "NZ", "callingCode": 64,  "name": "New Zealand"},
+        {"countryCode": "NI", "callingCode": 505, "name": "Nicaragua"},
+        {"countryCode": "NE", "callingCode": 227, "name": "Niger"},
+        {"countryCode": "NG", "callingCode": 234, "name": "Nigeria"},
+        {"countryCode": "NU", "callingCode": 683, "name": "Niue"},
+        {"countryCode": "NF", "callingCode": 672, "name": "Norfolk Islands"},
+        {"countryCode": "NP", "callingCode": 670, "name": "Northern Marianas"},
+        {"countryCode": "NO", "callingCode": 47,  "name": "Norway"},
+        {"countryCode": "OM", "callingCode": 968, "name": "Oman"},
+        {"countryCode": "PK", "callingCode": 92,  "name": "Pakistan"},
+        {"countryCode": "PW", "callingCode": 680, "name": "Palau"},
+        {"countryCode": "PA", "callingCode": 507, "name": "Panama"},
+        {"countryCode": "PG", "callingCode": 675, "name": "Papua New Guinea"},
+        {"countryCode": "PY", "callingCode": 595, "name": "Paraguay"},
+        {"countryCode": "PE", "callingCode": 51,  "name": "Peru"},
+        {"countryCode": "PH", "callingCode": 63,  "name": "Philippines"},
+        {"countryCode": "PL", "callingCode": 48,  "name": "Poland"},
+        {"countryCode": "PT", "callingCode": 351, "name": "Portugal"},
+        {"countryCode": "PR", "callingCode": 1787, "name": "Puerto Rico"},
+        {"countryCode": "QA", "callingCode": 974, "name": "Qatar"},
+        {"countryCode": "RE", "callingCode": 262, "name": "Reunion"},
+        {"countryCode": "RO", "callingCode": 40,  "name": "Romania"},
+        {"countryCode": "RU", "callingCode": 7,   "name": "Russia"},
+        {"countryCode": "RW", "callingCode": 250, "name": "Rwanda"},
+        {"countryCode": "SM", "callingCode": 378, "name": "San Marino"},
+        {"countryCode": "ST", "callingCode": 239, "name": "Sao Tome &amp; Principe"},
+        {"countryCode": "SA", "callingCode": 966, "name": "Saudi Arabia"},
+        {"countryCode": "SN", "callingCode": 221, "name": "Senegal"},
+        {"countryCode": "CS", "callingCode": 381, "name": "Serbia"},
+        {"countryCode": "SC", "callingCode": 248, "name": "Seychelles"},
+        {"countryCode": "SL", "callingCode": 232, "name": "Sierra Leone"},
+        {"countryCode": "SG", "callingCode": 65,  "name": "Singapore"},
+        {"countryCode": "SK", "callingCode": 421, "name": "Slovak Republic"},
+        {"countryCode": "SI", "callingCode": 386, "name": "Slovenia"},
+        {"countryCode": "SB", "callingCode": 677, "name": "Solomon Islands"},
+        {"countryCode": "SO", "callingCode": 252, "name": "Somalia"},
+        {"countryCode": "ZA", "callingCode": 27,  "name": "South Africa"},
+        {"countryCode": "ES", "callingCode": 34,  "name": "Spain"},
+        {"countryCode": "LK", "callingCode": 94,  "name": "Sri Lanka"},
+        {"countryCode": "SH", "callingCode": 290, "name": "St. Helena"},
+        {"countryCode": "KN", "callingCode": 1869, "name": "St. Kitts"},
+        {"countryCode": "SC", "callingCode": 1758, "name": "St. Lucia"},
+        {"countryCode": "SR", "callingCode": 597, "name": "Suriname"},
+        {"countryCode": "SD", "callingCode": 249, "name": "Sudan"},
+        {"countryCode": "SZ", "callingCode": 268, "name": "Swaziland"},
+        {"countryCode": "SE", "callingCode": 46,  "name": "Sweden"},
+        {"countryCode": "CH", "callingCode": 41,  "name": "Switzerland"},
+        {"countryCode": "SY", "callingCode": 963, "name": "Syria"},
+        {"countryCode": "TW", "callingCode": 886, "name": "Taiwan"},
+        {"countryCode": "TJ", "callingCode": 992, "name": "Tajikistan"},
+        {"countryCode": "TH", "callingCode": 66,  "name": "Thailand"},
+        {"countryCode": "TG", "callingCode": 228, "name": "Togo"},
+        {"countryCode": "TO", "callingCode": 676, "name": "Tonga"},
+        {"countryCode": "TT", "callingCode": 1868, "name": "Trinidad &amp; Tobago"},
+        {"countryCode": "TN", "callingCode": 216, "name": "Tunisia"},
+        {"countryCode": "TR", "callingCode": 90,  "name": "Turkey"},
+        {"countryCode": "TM", "callingCode": 993, "name": "Turkmenistan"},
+        {"countryCode": "TC", "callingCode": 1649, "name": "Turks &amp; Caicos Islands"},
+        {"countryCode": "TV", "callingCode": 688, "name": "Tuvalu"},
+        {"countryCode": "UG", "callingCode": 256, "name": "Uganda"},
+        {"countryCode": "UA", "callingCode": 380, "name": "Ukraine"},
+        {"countryCode": "AE", "callingCode": 971, "name": "United Arab Emirates"},
+        {"countryCode": "GB", "callingCode": 44,  "name": "United Kingdom"},
+        {"countryCode": "US", "callingCode": 1,   "name": "United States of America"},
+        {"countryCode": "UY", "callingCode": 598, "name": "Uruguay"},
+        {"countryCode": "UZ", "callingCode": 998, "name": "Uzbekistan"},
+        {"countryCode": "VU", "callingCode": 678, "name": "Vanuatu"},
+        {"countryCode": "VA", "callingCode": 379, "name": "Vatican City"},
+        {"countryCode": "VE", "callingCode": 58,  "name": "Venezuela"},
+        {"countryCode": "VN", "callingCode": 84,  "name": "Vietnam"},
+        {"countryCode": "VG", "callingCode": 1,   "name": "Virgin Islands - British"},
+        {"countryCode": "VI", "callingCode": 1,   "name": "Virgin Islands - US"},
+        {"countryCode": "WF", "callingCode": 681, "name": "Wallis &amp; Futuna"},
+        {"countryCode": "YE", "callingCode": 969, "name": "Yemen"},
+        {"countryCode": "YE", "callingCode": 967, "name": "Yemen"},
+        {"countryCode": "ZM", "callingCode": 260, "name": "Zambia"},
+        {"countryCode": "ZW", "callingCode": 263, "name": "Zimbabwe"}
+      ]
+    };
+  }
+
+  handleOnClick(option, index, ev, el) {
+    ev.preventDefault();
+    this.state.selected = option;
+    this.state.selectedIndex = index;
+    this.emit("onclick");
+    // look into once handler
+  }
+
+  handleOnInput(ev, el) {
+    this.emit("oninput")
+  }
+
+  handleOnChange(ev, el) {
+    this.emit("onchange", value, ev, el);
+  }
+
+}
+
+style.less {
+  .phone-dropdown {
+    .menu {
+      max-height: 360px;
+      overflow-y: scroll;
+      .menu-item {
+        min-width: 240px;
+      }
+    }
+  }
+}
+
+
+<div.form-group.phone-dropdown>
+
+  <div.form-label>
+    Hi there
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon">
+
+    </span>
+    <input type="text" class="form-input" placeholder="" />
+  </div>
+
+</div>

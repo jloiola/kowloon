@@ -13,7 +13,7 @@ class {
 
 <div.dropdown class=[(input.right &&  "dropdown-right"), {active: state.active}]>
   <kw-button.dropdown-toggle ${input["*"]} tabindex="0">
-    <include(input.renderBody) />
+    <include(input.selection.renderBody) />
   </kw-button>
   <kw-menu>
     <@item for(item in input.items)>

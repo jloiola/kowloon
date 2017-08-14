@@ -1,0 +1,6 @@
+{
+    "tags-dir": [
+      "./src/components",
+      "./src/pages"
+    ]
+}

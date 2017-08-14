@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "MARKO_CLEAN=true NODE_ENV=production node server.js",
-    "dev": "MARKO_CLEAN=true DEBUG=marko node_modules/.bin/browser-refresh server.js"
+    "dev": "MARKO_CLEAN=true node_modules/.bin/browser-refresh server.js"
   },
   "repository": {
     "type": "git",
@@ -17,29 +17,28 @@
     "url": "https://github.com/jloiola/kowloon/issues"
   },
   "engines": {
-    "node": "7.10"
+    "node": "8.3"
   },
   "homepage": "https://github.com/jloiola/kowloon",
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.16.1",
     "bluebird": "^3.5.0",
-    "body-parser": "^1.17.2",
-    "coffee-script": "^1.12.5",
-    "compression": "^1.6.2",
+    "browser-refresh": "^1.7.1",
+    "browser-refresh-taglib": "^1.1.0",
+    "coffeescript": "^2.0.0-beta4",
     "cookie-parser": "^1.4.3",
-    "debug": "^2.6.6",
-    "express": "^4.15.3",
-    "lasso": "^2.11.14",
-    "lasso-less": "^2.4.5",
-    "lasso-marko": "^2.3.0",
+    "koa": "github:jloiola/koa#54f2e62a20",
+    "koa-cookie": "^1.0.0",
+    "koa-mount": "^3.0.0",
+    "koa-router": "^7.2.1",
+    "koa-static-cache": "^5.1.1",
+    "lasso": "^2.10.0",
+    "lasso-less": "^2.4.3",
+    "lasso-marko": "^2.2.1",
     "lodash": "^4.17.4",
-    "marko": "^4.4.18",
-    "moment": "^2.18.1",
-    "page": "^1.7.1",
+    "marko": "^4.4.24",
     "require-self-ref": "^2.0.1",
-    "serve-static": "^1.12.3",
-    "spectre.css": "git+ssh://git@github.com/jloiola/spectre.git#brand",
-    "yargs": "^8.0.2"
+    "spectre.css": "^0.2.14"
   },
   "devDependencies": {
     "browser-refresh": "^1.7.1",

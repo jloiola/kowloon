@@ -5,54 +5,55 @@ require('marko/node-require');
 require('lasso/node-require-no-op').enable('.scss', '.sass', '.less', '.css');
 
 var path = require('path');
-var express = require('express');
 var lasso = require('lasso');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
 
-var serveStatic = require('serve-static');
-var isProduction = process.env.NODE_ENV === 'production';
+var cookieParser = require('koa-cookie').default;
+var staticCache = require('koa-static-cache');
+var mount = require('koa-mount');
 
-var app = express();
-app.locals.port = process.env.PORT || 3000;
-app.locals.rootPath = path.join("/" + (process.env.ORDERS_NAME || ""));
+var Koa = require('koa');
+var app = new Koa();
+var router = require('koa-router')();
+
+app.port = process.env.PORT || 3100;
+app.isProduction = app.env === 'production';
 
 lasso.configure({
   plugins: [
     'lasso-less',
     'lasso-marko'
   ],
-  outputDir: path.join(__dirname, '/static'),
-  urlPrefix: path.join("/" + (process.env.ORDERS_NAME || ""), "static"),
-  bundlingEnabled: isProduction,
-  minify: isProduction,
-  fingerprintsEnabled: isProduction,
+  outputDir: __dirname + '/static',
+  urlPrefix: "/static",
+  bundlingEnabled: app.isProduction,
+  minify: app.isProduction,
+  fingerprintsEnabled: app.isProduction,
   bundles: []
 });
 
-app.use(cookieParser());
-app.use(bodyParser.json());
+app.use(mount('/static', staticCache({
+  dir: __dirname + '/static',
+  maxAge: 365 * 24 * 60 * 60,
+  gzip: true,
+  buffer: true,
+  dynamic: true
+})));
 
-app.get('/diagnostic', function(req, res){
-  return res.sendStatus(200);
+app.use(cookieParser());
+
+var demoTemplate = require('./src/pages/demo/template.marko');
+router.get(['/demo', '/'], async (ctx, next) => {
+  ctx.type = "html"
+  ctx.body = demoTemplate.stream({});
 });
 
-app.use('/static', serveStatic(__dirname + '/static'));
 
-app.get("/demo", function (req, res, next) {
-  var template = require("./src/pages/demo/template.marko");
-  res.marko(template, {});
-})
+app
+  .use(router.routes())
+  .use(router.allowedMethods());
 
-// a bit ghetto
-app.listen(app.locals.port, function(err) {
-  if (err) {
-    throw err;
-  }
-
-  if (process.send) {
-    process.send('online');
-  }
-
-  console.log('Listening on port %d', app.locals.port);
+app.listen(app.port, function(err) {
+  if (err) { throw err; }
+  if (process.send) { process.send('online'); }
+  console.log('Listening on port %d', app.port);
 });
