@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/jloiola/kowloon",
   "dependencies": {
-    "axios": "^0.16.1",
+    "axios": "^0.16.2",
     "bluebird": "^3.5.0",
     "browser-refresh": "^1.7.1",
     "browser-refresh-taglib": "^1.1.0",
