@@ -19,5 +19,7 @@
     "@src": "string",
     "@after": "bool",
     "@before": "bool"
-  }
+  },
+  "@class": "string",
+  "@*": "string"
 }
