@@ -26,11 +26,11 @@ class {
   }
 
   handleOnClick(ev, el) {
-    this.emit("onclick")
+    this.emit("click")
   }
 
   handleOnInput(ev, el) {
-    this.emit("oninput")
+    this.emit("input")
   }
 
   handleOnChange(ev, el) {
@@ -45,7 +45,7 @@ class {
       value = el.innerText;
     }
 
-    this.emit("onchange", value, ev, el);
+    this.emit("change", value, ev, el);
     this.state.value = value;
   }
 }
