@@ -1,5 +1,7 @@
 {
     "@sections <section>[]": {
       "@center": "bool"
-    }
+    },
+    "@class": "string",
+    "@*": "string"
 }
