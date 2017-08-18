@@ -2,20 +2,28 @@
 class {
   onCreate (input, out) {
     this.state = {
-      bindTo: input.bind
+      bindTo: input.bindTo,
+      name: input.name
     }
   }
 
   onInput (input) {
+    this.state = {
+      bindTo: input.bindTo,
+      name: input.name
+    }
   }
 
   onMount () {
+    console.log("onMount",arguments)
   }
 
   onRender () {
+    console.log("onRender",arguments)
   }
 
   onUpdate () {
+    console.log("onUpdate",arguments)
   }
 
   handleOnSubmit(ev, el) {
@@ -33,5 +41,6 @@ class {
 }
 
 <form class={"form-horizontal": input.horizontal} on-submit("handleOnSubmit") on-change("handleOnChange")>
-  <include(input.renderBody) />
+  Dogs
+  <!-- <include(input.renderBody) /> -->
 </form>

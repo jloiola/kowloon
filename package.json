@@ -25,6 +25,8 @@
     "bluebird": "^3.5.0",
     "coffeescript": "^2.0.0-beta4",
     "cookie-parser": "^1.4.3",
+    "browser-refresh": "^1.7.1",
+    "browser-refresh-taglib": "^1.1.0",
     "koa": "github:jloiola/koa#54f2e62a20",
     "koa-cookie": "^1.0.0",
     "koa-mount": "^3.0.0",
