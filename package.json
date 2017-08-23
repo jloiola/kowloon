@@ -23,10 +23,10 @@
   "dependencies": {
     "axios": "^0.16.2",
     "bluebird": "^3.5.0",
-    "coffeescript": "^2.0.0-beta4",
-    "cookie-parser": "^1.4.3",
     "browser-refresh": "^1.7.1",
     "browser-refresh-taglib": "^1.1.0",
+    "coffeescript": "^2.0.0-beta4",
+    "cookie-parser": "^1.4.3",
     "koa": "github:jloiola/koa#54f2e62a20",
     "koa-cookie": "^1.0.0",
     "koa-mount": "^3.0.0",
@@ -38,6 +38,6 @@
     "lodash": "^4.17.4",
     "marko": "^4.4.24",
     "require-self-ref": "^2.0.1",
-    "spectre.css": "github:jloiola/spectre#brand"
+    "spectre.css": "^0.3.1"
   }
 }

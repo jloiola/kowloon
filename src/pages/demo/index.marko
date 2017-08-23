@@ -30,17 +30,17 @@ style.less {
 
     <kw-form name="petForm" bind-to=state.petForm>
       <kw-field name="firstName" label="First Name" type="text" />
-      <kw-field name="email" label="Email" type="email" bind=state.petForm />
+      <kw-field name="email" label="Email" type="email" />
 
       <kw-field name="pet" label="Dogs" type="select" options=[{value:3,label:"three"},{value:{"deep":"blue"},label:"IBM"},{value:4,label:"what"}]
-        placeholder="Which do you like?" bind=state.petForm />
+        placeholder="Which do you like?" />
 
-      <kw-field name="gender" label="Dogs" type="radio" options=[{value:3,label:"three"},{value:{"deep":"blue"},label:"IBM"},{value:4,label:"what"}] bind=state.petForm />
+      <kw-field name="gender" label="Dogs" type="radio" options=[{value:3,label:"three"},{value:{"deep":"blue"},label:"IBM"},{value:4,label:"what"}] />
 
-      <kw-field name="agree" label="Do you agree with this" type="checkbox" value=1 bind=state.petForm />
-      <kw-field name="agree-two" label="Do you agree with this" type="switch" value=true checked bind=state.petForm />
+      <kw-field name="agree" label="Do you agree with this" type="checkbox" value=1 />
+      <kw-field name="agree-two" label="Do you agree with this" type="switch" value=true checked />
 
-      <kw-field name="bio" label="Tell us about yourself" type="textarea" autogrow value="start with this..." bind=state.petForm />
+      <kw-field name="bio" label="Tell us about yourself" type="textarea" autogrow value="start with this..." />
     </kw-form>
 
 
@@ -59,14 +59,18 @@ style.less {
     <kw-phone></kw-phone>
 
     <h3>Buttons</h3>
-    <section>
-      <kw-button action>s</kw-button>&nbsp;
-      <kw-button size="lg" action circle primary>L</kw-button>&nbsp;
-      <kw-button action circle primary>M</kw-button>&nbsp;
-      <kw-button size="sm" action circle>S</kw-button>&nbsp;
-      <kw-button block>block</kw-button>&nbsp;
-      <kw-button link href="/demo">block</kw-button>&nbsp;
-      <kw-button primary disabled>Primary Button</kw-button>&nbsp;
+    <section.columns>
+      <div.column.col-12>
+        <kw-button action>s</kw-button>&nbsp;
+        <kw-button size="lg" action circle primary>L</kw-button>&nbsp;
+        <kw-button action circle primary>M</kw-button>&nbsp;
+        <kw-button size="sm" action circle>S</kw-button>&nbsp;
+        <kw-button link href="/demo">link</kw-button>&nbsp;
+        <kw-button primary disabled>Primary Disabled</kw-button>&nbsp;
+      </div>
+      <div.column.col-12>
+        <kw-button block>block</kw-button>&nbsp;
+      </div>
     </section>
 
 
@@ -90,9 +94,17 @@ style.less {
   </section>
   <h3>Panels</h3>
   <!--  so we have to use class not tag name like kw-panel because this isn't shadow DOM -->
-  <style>.panel {height: 50vh;background-color:white;}</style>
+  <style>
+    .panel {
+      height: 75vh;
+      background-color:white;
+    }
+    .panel .tile {
+      margin: .75rem 0;
+    }
+  </style>
   <section.columns>
-    <div.column.col-6>
+    <div.column.col-lg-6.col-md-12>
       <kw-panel>
         <@header class="text-center">
           <kw-avatar size="xl" initial="JL" />
@@ -107,14 +119,14 @@ style.less {
           </kw-tabs>
         </@nav>
         <@body>
-          <kw-tile.tile-centered style="margin: 1.5rem 0;">
+          <kw-tile.tile-centered>
             <@content>
               <@title>Email</@title>
               <@subtitle>bruce.banner@hulk.com</@subtitle>
             </@content>
             <@action><kw-button action link size="lg">E</kw-button></@action>
           </kw-tile>
-          <kw-tile.tile-centered style="margin: 1.5rem 0;">
+          <kw-tile.tile-centered>
             <@content>
               <@title>Location</@title>
               <@subtitle>Dayton, Ohio</@subtitle>
@@ -130,13 +142,14 @@ style.less {
         </@footer>
       </kw-panel>
     </div>
-    <div.column.col-6>
+    <div.show-md>&nbsp;</div>
+    <div.column.col-lg-6.col-md-12>
       <kw-panel>
         <@header>
-          <@title>Comments</@title>
+          <@title><h6>Comments</h6></@title>
         </@header>
         <@body>
-          <kw-tile style="margin: 1.5rem 0;">
+          <kw-tile>
             <@icon>
               <kw-avatar initial="AF" />
             </@icon>
@@ -145,7 +158,7 @@ style.less {
               <@subtitle>Earth's Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle...</@subtitle>
             </@content>
           </kw-tile>
-          <kw-tile style="margin: 1.5rem 0;">
+          <kw-tile>
             <@icon>
               <kw-avatar initial="JL" />
             </@icon>
@@ -154,7 +167,7 @@ style.less {
               <@subtitle>The Strategic Homeland Intervention, Enforcement, and Logistics Division...</@subtitle>
             </@content>
           </kw-tile>
-          <kw-tile style="margin: 1.5rem 0;">
+          <kw-tile>
             <@icon>
               <kw-avatar initial="AA " />
             </@icon>
@@ -245,10 +258,10 @@ style.less {
   <h3>Cards</h3>
   <section>
     <div.columns>
-      <div.column.col-6>
+      <div.column.col-6.col-sm-12>
         <kw-card>
 
-          <@image src="https://picturepan2.github.io/spectre/img/macos-sierra.jpg" />
+          <@image src="https://i.ytimg.com/vi/Ski2JSA-Xh0/sddefault.jpg" />
 
           <@header>
             <@title>Google</@title>
@@ -266,10 +279,12 @@ style.less {
           </@footer>
         </kw-card>
       </div>
-      <div.column.col-6>
+      <!--  I want a better solution, but this works -->
+      <div.show-sm>&nbsp;</div>
+      <div.column.col-6.col-sm-12>
         <kw-card>
 
-          <@image src="https://picturepan2.github.io/spectre/img/macos-sierra.jpg" />
+          <@image src="https://i.ytimg.com/vi/mWJIfjzM2AI/sddefault.jpg" />
 
           <@header>
             <@title>Google</@title>
@@ -311,7 +326,7 @@ style.less {
   <h3>Menus</h3>
   <style>.chip{margin: 0.5em; }</style>
   <section.columns>
-    <div.column.col-4>
+    <div.column.col-5.col-sm-12>
       <kw-menu>
         <@item>
           <kw-avatar initial="JL"></kw-avatar>
@@ -329,7 +344,9 @@ style.less {
         </@item>
       </kw-menu>
     </div>
-    <div.column.col-4>
+    <!--  I want a better solution, but this works -->
+    <div.show-sm>&nbsp;</div>
+    <div.column.col-5.col-sm-12.col-ml-auto>
       <kw-menu>
         <@item divider="Links" />
         <@item>
@@ -449,7 +466,7 @@ style.less {
   <h3>Tabs</h3>
   <!--  move a tag into component and handle click events -->
   <section.columns>
-    <div.column.col-6>
+    <div.column.col-sm-12>
       <kw-tabs>
         <@tab>Music</@tab>
         <@tab>Playlist</@tab>
@@ -457,7 +474,7 @@ style.less {
         <@tab>Store</@tab>
       </kw-tabs>
     </div>
-    <div.column.col-6>
+    <div.column.col-sm-12>
       <kw-tabs block>
         <@tab>Music</@tab>
         <@tab>Playlist</@tab>
@@ -469,7 +486,7 @@ style.less {
         <@tab badge=9>Music</@tab>
         <@tab>Playlist</@tab>
         <@tab>Radio</@tab>
-        <@action>
+        <@action.hide-sm>
           <div class="input-group input-inline">
             <input class="form-input input-sm" type="text" placeholder="search">
             <button class="btn btn-primary btn-sm input-group-btn">Search</button>
