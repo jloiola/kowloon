@@ -9,5 +9,9 @@
     "@value": "expression",
     "@label": "string"
   },
-  "@value": "expression"
+  "@value": "expression",
+  "@bind": "expression",
+  "@checked": "bool",
+  "@selected": "bool",
+  "@*": "string"
 }

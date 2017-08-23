@@ -6,11 +6,15 @@
 
 class {
   onCreate (input, out) {
-
     this.state = {
+      name: input.name,
+      value: input.value,
+      form: input.form,
+      selected: input.selected,
+      checked: input.checked,
       options: [],
       renderHorizontal: false,
-      value: input.value
+      selectedIndex: null
     };
   }
 
@@ -19,35 +23,62 @@ class {
     if(input.options) {
       this.state.options = input.options;
     }
+
+  }
+
+  getParentForm() {
+    if(!this.el) {
+      return;
+    }
+    var parent = this.el.parentElement;
+    while(parent && (parent.nodeName != "FORM")) {
+      parent = parent.parentElement
+    }
+    return parent;
   }
 
   onMount () {
-    this.state.renderHorizontal = this.el.parentElement.classList.contains("form-horizontal");
-  }
 
-  handleOnClick(ev, el) {
-    this.emit("click")
-  }
+    var parentForm = this.getParentForm();
+    if(parentForm) {
+      this.state.renderHorizontal = parentForm.classList.contains("form-horizontal");
+      this.state.form = parentForm.name;
+    }
 
-  handleOnInput(ev, el) {
-    this.emit("input")
   }
 
   handleOnChange(ev, el) {
-    var value;
+
     if(ev.target.tagName == "INPUT" && ev.target.type == "radio") {
-      var index = el.attributes.index.value;
-      value = this.state.options[index].value;
+      var index = parseInt(el.attributes.index.value);
+      this.state.options.forEach(function (opt, i) {
+        opt.checked = index === i;
+      });
+      this.state.value = this.state.options[index].value;
+      this.state.selectedIndex = index;
+    } else if(ev.target.tagName == "INPUT" && ev.target.type == "checkbox") {
+      this.state.checked = el.checked;
+    } else if (ev.target.tagName == "INPUT") {
+      this.state.value = el.value;
     } else if (ev.target.tagName == "SELECT") {
-      value = this.state.options[el.selectedIndex].value;
+      console.log(el.selectedIndex, "what")
+
+      if(this.state.selectedIndex != null && el.selectedIndex != this.state.selectedIndex) {
+        this.state.options[this.state.selectedIndex].selected = false;
+      }
+
+      this.state.options[el.selectedIndex].selected = true;
+      this.state.value = this.state.options[el.selectedIndex].value;
+      this.state.selectedIndex = el.selectedIndex;
+
     } else if (ev.target.tagName == "TEXTAREA") {
-      console.log(el,":ta")
-      value = el.innerText;
+      this.state.value = el.value;
     }
 
-    this.emit("change", value, ev, el);
-    this.state.value = value;
+    console.log("fieldchange", this.state.name, this.state.value, ev, el);
+    this.emit("fieldchange", this.state.name, this.state.value, ev, el);
   }
+
 }
 
 <div.form-group>
@@ -63,29 +94,34 @@ class {
   <div class=[(state.renderHorizontal && "col-9")]>
 
     <if(input.type == "select")>
-      <select.form-select on-change("handleOnChange")>
+      <select.form-select on-change("handleOnChange") value=state.value>
         <!-- <include(input.renderBody) /> -->
-        <option for(option in state.options) value=option.value>${option.label ? option.label : option.value}</option>
+        <!-- <option if(input.placeholder) value=null>${input.placeholder}</option> -->
+        <option for(option in state.options) value=option.value selected=option.selected>
+          ${option.label ? option.label : option.value}
+        </option>
       </select>
     </if>
     <else-if(input.type == "radio")>
       <label.form-radio for(option in state.options | status-var=loop)>
-        <input index=loop.getIndex() type="radio" name=input.name value=option.value on-change("handleOnChange") />
+        <input type="radio" form=state.form name=input.name value=option.value on-change("handleOnChange") index=loop.getIndex() checked=option.checked />
           <i.form-icon></i>${option.label}
       </label>
     </else-if>
     <else-if(input.type == "checkbox" || input.type == "switch")>
       <label class=["form-${input.type}"]>
-        <input type="checkbox" name=input.name value=input.value on-click("handleOnClick")>
+        <input type="checkbox" form=state.form name=input.name value=state.value on-change("handleOnChange") checked=state.checked>
         <i.form-icon></i> ${input.label}
       </label>
     </else-if>
     <else-if(input.type == "textarea")>
-      <textarea.form-input placeholder=input.placeholder on-change("handleOnChange")></textarea>
+      <textarea.form-input name=input.name form=state.form placeholder=input.placeholder on-change("handleOnChange") value=state.value>${state.value}</textarea>
     </else-if>
     <else>
-      <input class="form-input" type=input.type placeholder=input.placeholder on-input("handleOnInput")>
+      <input.form-input type=input.type name=input.name form=state.form placeholder=input.placeholder on-change("handleOnChange") value=state.value>
     </else>
+
+    <span>value: ${JSON.stringify(state.value)}</span>
 
   </div>
 

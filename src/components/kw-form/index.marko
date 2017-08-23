@@ -15,32 +15,40 @@ class {
   }
 
   onMount () {
-    console.log("onMount",arguments)
+
+    this.on('input', function(input, out) {
+      console.log(this, "who is this on input FORM")
+    }.bind(this));
+
+    this.on('mount', function(input, out) {
+      console.log(this,  "who is this on mount FORM")
+    }.bind(this));
+
+    this.on("fieldchange", function () {
+      console.log(arguments);
+    });
   }
 
   onRender () {
-    console.log("onRender",arguments)
+
   }
 
   onUpdate () {
-    console.log("onUpdate",arguments)
+
   }
 
   handleOnSubmit(ev, el) {
     console.log(ev, el, "submit form");
   }
 
-  handleOnChange(ev, el) {
-    console.log(ev, el, "change form");
-  }
-
-  handleOnInput(ev, el) {
-    console.log(ev, el, "input form");
+  handleOnChange(name, value, ev, el) {
+    // this.state.bindTo[name] = value;
+    console.log(name, value, ev, el, "change form");
   }
 
 }
 
-<form class={"form-horizontal": input.horizontal} on-submit("handleOnSubmit") on-change("handleOnChange")>
-  Dogs
-  <!-- <include(input.renderBody) /> -->
+<form name=input.name class={"form-horizontal": input.horizontal} on-submit("handleOnSubmit") on-change("handleOnChange") ${input['*']}>
+  <div>VALUE: ${JSON.stringify(state.bindTo)}</div>
+  <include(input.renderBody) />
 </form>

@@ -1,11 +1,17 @@
 
 class {
-  onMount(input) {
-    console.log("onMount", input)
+  onCreate(input, out) {
+    this.state = { petForm: null};
   }
+
+  onMount(input) {
+    console.log("i am basically the page controller aka glue", input)
+  }
+
   openModal(name){
     this.getComponent(name).show();
   }
+
   closeModal(name){
     this.getComponent(name).hide();
   }
@@ -19,46 +25,49 @@ style.less {
   <style>section{margin-bottom:20px;}</style>
   <h1>Kowloon <small.label>(spectre.css + marko.js)</small></h1>
 
-  <h2>Elements</h2>
-  <section>
-    <ul>
-      <li>Typography - it is just markup</li>
-      <li>Table - leave it as markup or build something crazy?</li>
-      <li>Button - make component</li>
-    </ul>
-  </section>
-
-  <kw-phone></kw-phone>
-
-  <h3>Buttons</h3>
-  <section>
-    <kw-button action>s</kw-button>&nbsp;
-    <kw-button size="lg" action circle primary>L</kw-button>&nbsp;
-    <kw-button action circle primary>M</kw-button>&nbsp;
-    <kw-button size="sm" action circle>S</kw-button>&nbsp;
-    <kw-button block>block</kw-button>&nbsp;
-    <kw-button link href="/demo">block</kw-button>&nbsp;
-    <kw-button primary disabled>Primary Button</kw-button>&nbsp;
-  </section>
-
-
   <h3>Forms</h3>
   <section>
 
-    <kw-form name="profile" horizontal bind={}>
+    <kw-form name="petForm" bind-to=state.petForm>
       <kw-field name="firstName" label="First Name" type="text" />
-      <kw-field name="email" label="Email" type="email" />
-      <kw-field name="pet" label="Dogs" type="select" options=[{value:3,label:"three"},{value:{"deep":"blue"},label:"IBM"},{value:4,label:"what"}] />
+      <kw-field name="email" label="Email" type="email" bind=state.petForm />
 
-      <kw-field name="gender" label="Dogs" type="radio" options=[{value:3,label:"three"},{value:{"deep":"blue"},label:"IBM"},{value:4,label:"what"}] />
+      <kw-field name="pet" label="Dogs" type="select" options=[{value:3,label:"three"},{value:{"deep":"blue"},label:"IBM"},{value:4,label:"what"}]
+        placeholder="Which do you like?" bind=state.petForm />
 
-      <kw-field name="agree" label="Do you agree with this" type="checkbox" value=1 />
-      <kw-field name="agree-two" label="Do you agree with this" type="switch" value=true />
+      <kw-field name="gender" label="Dogs" type="radio" options=[{value:3,label:"three"},{value:{"deep":"blue"},label:"IBM"},{value:4,label:"what"}] bind=state.petForm />
 
-      <kw-field name="bio" label="Tell us about yourself" type="textarea" autogrow />
+      <kw-field name="agree" label="Do you agree with this" type="checkbox" value=1 bind=state.petForm />
+      <kw-field name="agree-two" label="Do you agree with this" type="switch" value=true checked bind=state.petForm />
+
+      <kw-field name="bio" label="Tell us about yourself" type="textarea" autogrow value="start with this..." bind=state.petForm />
     </kw-form>
 
+
   </section>
+
+
+    <h2>Elements</h2>
+    <section>
+      <ul>
+        <li>Typography - it is just markup</li>
+        <li>Table - leave it as markup or build something crazy?</li>
+        <li>Button - make component</li>
+      </ul>
+    </section>
+
+    <kw-phone></kw-phone>
+
+    <h3>Buttons</h3>
+    <section>
+      <kw-button action>s</kw-button>&nbsp;
+      <kw-button size="lg" action circle primary>L</kw-button>&nbsp;
+      <kw-button action circle primary>M</kw-button>&nbsp;
+      <kw-button size="sm" action circle>S</kw-button>&nbsp;
+      <kw-button block>block</kw-button>&nbsp;
+      <kw-button link href="/demo">block</kw-button>&nbsp;
+      <kw-button primary disabled>Primary Button</kw-button>&nbsp;
+    </section>
 
 
   <h2>Layout</h2>

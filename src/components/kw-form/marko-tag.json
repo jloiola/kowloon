@@ -2,5 +2,6 @@
   "@name": "string",
   "@horizontal": "bool",
   "@label-cols": "integer",
-  "@bind": "expression"
+  "@bind-to": "expression",
+  "@*": "string"
 }
