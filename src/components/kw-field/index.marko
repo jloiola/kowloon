@@ -61,7 +61,6 @@ class {
     } else if (ev.target.tagName == "INPUT") {
       this.state.value = el.value;
     } else if (ev.target.tagName == "SELECT") {
-      console.log(el.selectedIndex, "what")
 
       if(this.state.selectedIndex != null && el.selectedIndex != this.state.selectedIndex) {
         this.state.options[this.state.selectedIndex].selected = false;
@@ -120,8 +119,6 @@ class {
     <else>
       <input.form-input type=input.type name=input.name form=state.form placeholder=input.placeholder on-change("handleOnChange") value=state.value>
     </else>
-
-    <span>value: ${JSON.stringify(state.value)}</span>
 
   </div>
 

@@ -49,6 +49,5 @@ class {
 }
 
 <form name=input.name class={"form-horizontal": input.horizontal} on-submit("handleOnSubmit") on-change("handleOnChange") ${input['*']}>
-  <div>VALUE: ${JSON.stringify(state.bindTo)}</div>
   <include(input.renderBody) />
 </form>
