@@ -1,0 +1,19 @@
+
+class {
+
+  onCreate (input) {
+
+    var classList = [];
+    ["gapless", "oneline"].forEach(function (format) {
+      if(input[format]) {
+        classList.push("col-" + format)
+      }
+    })
+
+    this.state = {classList: classList};
+  }
+}
+
+<div.columns class=[input.class, state.classList] ${input['*']}>
+  <include(input.renderBody) />
+</div>

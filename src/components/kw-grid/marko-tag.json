@@ -1,0 +1,9 @@
+{
+  "@class": "string",
+  "@*": "string",
+  "@xs": "bool",
+  "@sm": "bool",
+  "@md": "bool",
+  "@lg": "bool",
+  "@xl": "bool"
+}

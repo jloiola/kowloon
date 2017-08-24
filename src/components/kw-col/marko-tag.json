@@ -1,0 +1,20 @@
+{
+  "@class": "string",
+  "@hide": {
+    "type": "string",
+    "enum": ["xs", "sm", "md", "lg", "xl"]
+  },
+  "@show": {
+    "type": "string",
+    "enum": ["xs", "sm", "md", "lg", "xl"]
+  },
+  "@*": "string",
+  "@xs": "integer",
+  "@sm": "integer",
+  "@md": "integer",
+  "@lg": "integer",
+  "@xl": "integer",
+  "@mr": "bool",
+  "@ml": "bool",
+  "@mx": "bool"
+}

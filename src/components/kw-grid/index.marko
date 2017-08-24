@@ -1,0 +1,20 @@
+
+class {
+
+  onCreate (input) {
+
+    var classList = [];
+    // TODO only set one..?
+    ["xs", "sm", "md", "lg", "xl"].forEach(function (size) {
+      if(input[size]) {
+        classList.push("grid-" + size)
+      }
+    })
+
+    this.state = {classList: classList};
+  }
+}
+
+<div.container class=[input.class, state.classList] ${input['*']}>
+  <include(input.renderBody) />
+</div>

@@ -1,0 +1,34 @@
+
+class {
+
+  onCreate (input) {
+
+    var classList = [];
+    ["xs", "sm", "md", "lg", "xl"].forEach(function (size) {
+      if(input[size]) {
+        classList.push("col-" + size + "-" + input[size])
+      }
+    })
+
+    //
+    ["mr", "ml", "mx"].forEach(function (offset) {
+      if(input[offset]) {
+        classList.push("col-" + size + "-auto")
+      }
+    })
+
+    if(input.show) {
+      classList.push("show-" + input.show)
+    }
+
+    if(input.hide) {
+      classList.push("hide-" + input.hide)
+    }
+
+    this.state = {classList: classList};
+  }
+}
+
+<div.column class=[input.class, state.classList] ${input['*']}>
+  <include(input.renderBody) />
+</div>

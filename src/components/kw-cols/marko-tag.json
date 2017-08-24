@@ -1,0 +1,6 @@
+{
+  "@class": "string",
+  "@*": "string",
+  "@gapless": "bool",
+  "@oneline": "bool"
+}
