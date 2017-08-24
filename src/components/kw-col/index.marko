@@ -8,14 +8,13 @@ class {
       if(input[size]) {
         classList.push("col-" + size + "-" + input[size])
       }
-    })
+    });
 
-    //
     ["mr", "ml", "mx"].forEach(function (offset) {
       if(input[offset]) {
-        classList.push("col-" + size + "-auto")
+        classList.push("col-" + offset + "-auto")
       }
-    })
+    });
 
     if(input.show) {
       classList.push("show-" + input.show)

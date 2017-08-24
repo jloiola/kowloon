@@ -38,6 +38,6 @@
     "lodash": "^4.17.4",
     "marko": "^4.4.24",
     "require-self-ref": "^2.0.1",
-    "spectre.css": "^0.3.1"
+    "spectre.css": "github:jloiola/spectre#brand"
   }
 }
