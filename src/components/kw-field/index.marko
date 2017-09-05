@@ -76,7 +76,7 @@ class {
 
     // TODO think about normalizing and re-emitting or just let it pasthrough
     // console.log("fieldchange", this.state.name, this.state.value, ev, el);
-    // this.emit("fieldchange", this.state.name, this.state.value, ev, el);
+    this.emit("change", this.state.name, this.state.value, ev, el);
   }
 
 }
