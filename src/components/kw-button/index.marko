@@ -21,7 +21,6 @@ class {
   handleOnClick (ev, el) {
     if(!this.input.href) {
       ev.preventDefault();
-      console.log("emit click")
       this.emit("click", ev, el);
     }
   }
