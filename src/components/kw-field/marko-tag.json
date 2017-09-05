@@ -5,6 +5,7 @@
   "@placeholder": "string",
   "@autogrow": "bool",
   "@speech": "bool",
+  "@required": "bool",
   "@options <option>[]": {
     "@value": "expression",
     "@label": "string"

@@ -94,7 +94,7 @@ class {
   <div class=[(state.renderHorizontal && "col-9")]>
 
     <if(input.type == "select")>
-      <select.form-select on-change("handleOnChange") value=state.value>
+      <select.form-select on-change("handleOnChange") value=state.value required=state.required>
         <!-- <include(input.renderBody) /> -->
         <!-- <option if(input.placeholder) value=null>${input.placeholder}</option> -->
         <option for(option in state.options) value=option.value selected=option.selected>
@@ -104,21 +104,21 @@ class {
     </if>
     <else-if(input.type == "radio")>
       <label.form-radio for(option in state.options | status-var=loop)>
-        <input type="radio" form=state.form name=input.name value=option.value on-change("handleOnChange") index=loop.getIndex() checked=option.checked />
+        <input type="radio" form=state.form name=input.name value=option.value on-change("handleOnChange") index=loop.getIndex() checked=option.checked  required=option.required />
           <i.form-icon></i>${option.label}
       </label>
     </else-if>
     <else-if(input.type == "checkbox" || input.type == "switch")>
       <label class=["form-${input.type}"]>
-        <input type="checkbox" form=state.form name=input.name value=state.value on-change("handleOnChange") checked=state.checked>
+        <input type="checkbox" form=state.form name=input.name value=state.value on-change("handleOnChange") checked=state.checked required=state.required>
         <i.form-icon></i> ${input.label}
       </label>
     </else-if>
     <else-if(input.type == "textarea")>
-      <textarea.form-input name=input.name form=state.form placeholder=input.placeholder on-change("handleOnChange") value=state.value>${state.value}</textarea>
+      <textarea.form-input name=input.name form=state.form placeholder=input.placeholder on-change("handleOnChange") value=state.value required=state.required>${state.value}</textarea>
     </else-if>
     <else>
-      <input.form-input type=input.type name=input.name form=state.form placeholder=input.placeholder on-change("handleOnChange") value=state.value>
+      <input.form-input type=input.type name=input.name form=state.form placeholder=input.placeholder on-change("handleOnChange") value=state.value required=state.required />
     </else>
 
   </div>
