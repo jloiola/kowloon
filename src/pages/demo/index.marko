@@ -36,8 +36,8 @@ style.less {
   <section>
 
     <kw-form name="petForm" bind-to=state.petForm>
-      <kw-field name="firstName" label="First Name" type="text" />
-      <kw-field name="email" label="Email" type="email" />
+      <kw-field name="firstName" label="First Name" type="text" required />
+      <kw-field name="email" label="Email" type="email" required />
 
       <kw-field name="pet" label="Dogs" type="select" options=[{value:3,label:"three"},{value:{"deep":"blue"},label:"IBM"},{value:4,label:"what"}]
         placeholder="Which do you like?" />

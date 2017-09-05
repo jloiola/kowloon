@@ -12,6 +12,8 @@ class {
       form: input.form,
       selected: input.selected,
       checked: input.checked,
+      required: input.required,
+      wasFocused: false,
       options: [],
       renderHorizontal: false,
       selectedIndex: null
@@ -46,6 +48,13 @@ class {
     }
 
   }
+ //https://alistapart.com/article/forward-thinking-form-validation
+  handleOnFocus(ev, el) {
+    this.state.wasFocused = true;
+    this.emit("focus", ev, el);
+    console.log('focus', this.state.wasFocused)
+  }
+
 
   handleOnChange(ev, el) {
 
@@ -104,7 +113,7 @@ class {
     </if>
     <else-if(input.type == "radio")>
       <label.form-radio for(option in state.options | status-var=loop)>
-        <input type="radio" form=state.form name=input.name value=option.value on-change("handleOnChange") index=loop.getIndex() checked=option.checked  required=option.required />
+        <input type="radio" form=state.form name=input.name value=option.value on-change("handleOnChange") index=loop.getIndex() checked=option.checked required=option.required />
           <i.form-icon></i>${option.label}
       </label>
     </else-if>
@@ -115,10 +124,10 @@ class {
       </label>
     </else-if>
     <else-if(input.type == "textarea")>
-      <textarea.form-input name=input.name form=state.form placeholder=input.placeholder on-change("handleOnChange") value=state.value required=state.required>${state.value}</textarea>
+      <textarea.form-input on-focus("handleOnFocus") name=input.name form=state.form placeholder=input.placeholder on-change("handleOnChange") value=state.value required=state.required>${state.value}</textarea>
     </else-if>
     <else>
-      <input.form-input type=input.type name=input.name form=state.form placeholder=input.placeholder on-change("handleOnChange") value=state.value required=state.required />
+      <input.form-input on-focus("handleOnFocus") type=input.type name=input.name form=state.form placeholder=input.placeholder on-change("handleOnChange") value=state.value required=state.required />
     </else>
 
   </div>
