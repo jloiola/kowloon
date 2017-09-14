@@ -48,7 +48,8 @@ class {
     }
 
   }
- //https://alistapart.com/article/forward-thinking-form-validation
+
+  //https://alistapart.com/article/forward-thinking-form-validation
   handleOnFocus(ev, el) {
     this.state.wasFocused = true;
     this.emit("focus", ev, el);
@@ -111,6 +112,7 @@ class {
         </option>
       </select>
     </if>
+    <!--  maybe want a 'radiolist' or 'radioset' or 'radiogroup'-->
     <else-if(input.type == "radio")>
       <label.form-radio for(option in state.options | status-var=loop)>
         <input type="radio" form=state.form name=input.name value=option.value on-change("handleOnChange") index=loop.getIndex() checked=option.checked required=option.required />
